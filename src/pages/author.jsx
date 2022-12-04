@@ -4,6 +4,7 @@ import Header from "@layout/header/header-01";
 import Footer from "@layout/footer/footer-01";
 import AuthorIntroArea from "@containers/author-intro";
 import AuthorProfileArea from "@containers/author-profile";
+import ExploreProductArea from "@containers/explore-product/layout-10";
 
 // Demo data
 import authorData from "../data/author.json";
@@ -19,7 +20,12 @@ const Author = () => (
         <Header />
         <main id="main-content">
             <AuthorIntroArea data={authorData} />
-            <AuthorProfileArea data={{ products: productData }} />
+            <ExploreProductArea
+                data={{
+                    products: productData,
+                }}
+            />
+            {/* <AuthorProfileArea data={{ products: productData }} /> */}
         </main>
         <Footer />
     </Wrapper>

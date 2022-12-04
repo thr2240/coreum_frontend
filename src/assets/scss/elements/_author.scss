@@ -250,3 +250,17 @@
         }
     }
 }
+
+.user-thumbnail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 2px solid black;
+    margin: auto 0;
+    border-radius: 50%;
+    width: 144px;
+    height: 144px;
+    span {
+        border-radius: 50%;
+    }
+}

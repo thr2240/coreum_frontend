@@ -58,7 +58,7 @@ const CreateCollectionArea = () => {
                                     className="logo-image"
                                     id="logoImg"
                                     placeholder={{
-                                        src: "/images/profile/profile-01.jpg",
+                                        src: "/images/profile/profile-01.png",
                                     }}
                                     preview={getValues("logoImg")?.[0]}
                                     {...register("logoImg", {

@@ -34,7 +34,7 @@ const EditProfileImage = () => {
                             ) : (
                                 <Image
                                     id="rbtinput1"
-                                    src="/images/profile/profile-01.jpg"
+                                    src="/images/profile/profile-01.png"
                                     alt="Profile-NFT"
                                     layout="fill"
                                 />

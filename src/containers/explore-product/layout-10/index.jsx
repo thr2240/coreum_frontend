@@ -180,7 +180,6 @@ const ExploreProductArea = ({
         return newObj;
     }, {});
     const levels = [...new Set(products.map((prod) => prod.level))];
-    const languages = [...new Set(products.map((prod) => prod.language))];
 
     return (
         <div
@@ -207,7 +206,6 @@ const ExploreProductArea = ({
                             sort={state.sort}
                             categories={categories}
                             levels={levels}
-                            languages={languages}
                             filterHandler={filterHandler}
                             priceHandler={priceHandler}
                         />
