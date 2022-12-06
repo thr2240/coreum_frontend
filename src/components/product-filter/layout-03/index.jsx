@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Scrollbars } from 'react-custom-scrollbars';
 import ContactWidget from "./contact";
 import SortWidget from "./sort";
 import CategoryFilter from "./category-filter";
@@ -15,14 +16,19 @@ const ProductFilter = ({
     categories,
     levels,
 }) => (
-    <div className="nu-course-sidebar">
-        <ContactWidget />
-        <SortWidget onChange={sortHandler} value={sort} />
-        <CategoryFilter categories={categories} onChange={filterHandler} />
-        <LevelFilter onChange={filterHandler} levels={levels} />
-        <PriceSort onChange={sortHandler} value={sort} />
-        <PriceRangeFilter values={inputs.price} onChange={priceHandler} />
-    </div>
+    <Scrollbars autoHide style={{ height: "100vh" }}
+        renderThumbVertical={({ style, ...props }) =>
+            <div {...props} className={'thumb-horizontal'} />
+        }>
+        <div className="nu-course-sidebar">
+            <ContactWidget />
+            <SortWidget onChange={sortHandler} value={sort} />
+            <CategoryFilter categories={categories} onChange={filterHandler} />
+            <LevelFilter onChange={filterHandler} levels={levels} />
+            <PriceSort onChange={sortHandler} value={sort} />
+            <PriceRangeFilter values={inputs.price} onChange={priceHandler} />
+        </div>
+    </Scrollbars>
 );
 
 ProductFilter.propTypes = {

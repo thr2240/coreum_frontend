@@ -1,6 +1,7 @@
 import { useReducer, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { Scrollbars } from 'react-custom-scrollbars';
 import SectionTitle from "@components/section-title/layout-02";
 import ProductFilter from "@components/product-filter/layout-03";
 import Product from "@components/product/layout-01";
@@ -211,40 +212,45 @@ const ExploreProductArea = ({
                         />
                     </div>
                     <div className="col-lg-9 order-1 order-lg-2">
-                        <div className="row g-5">
-                            {state.products.length > 0 ? (
-                                <>
-                                    {state.products.map((prod) => (
-                                        <div
-                                            key={prod.id}
-                                            className="col-lg-4 col-md-6 col-sm-12"
-                                        >
-                                            <Product
-                                                placeBid={!!placeBid}
-                                                title={prod.title}
-                                                slug={prod.slug}
-                                                latestBid={prod.latestBid}
-                                                price={prod.price}
-                                                likeCount={prod.likeCount}
-                                                image={prod.images?.[0]}
-                                                authors={prod.authors}
-                                                bitCount={prod.bitCount}
-                                            />
-                                        </div>
-                                    ))}
-                                </>
-                            ) : (
-                                <p>No item to show</p>
-                            )}
-                            {numberOfPages > 1 && (
-                                <Pagination
-                                    className="single-column-blog"
-                                    currentPage={state.currentPage}
-                                    numberOfPages={numberOfPages}
-                                    onClick={paginationHandler}
-                                />
-                            )}
-                        </div>
+                        <Scrollbars autoHide style={{ height: "100vh", overflowX: 'hidden' }}
+                            renderThumbVertical={({ style, ...props }) =>
+                                <div {...props} className={'thumb-horizontal'} />
+                            }>
+                            <div className="row g-5">
+                                {state.products.length > 0 ? (
+                                    <>
+                                        {state.products.map((prod) => (
+                                            <div
+                                                key={prod.id}
+                                                className="col-lg-3 col-md-4 col-sm-12"
+                                            >
+                                                <Product
+                                                    placeBid={!!placeBid}
+                                                    title={prod.title}
+                                                    slug={prod.slug}
+                                                    latestBid={prod.latestBid}
+                                                    price={prod.price}
+                                                    likeCount={prod.likeCount}
+                                                    image={prod.images?.[0]}
+                                                    authors={prod.authors}
+                                                    bitCount={prod.bitCount}
+                                                />
+                                            </div>
+                                        ))}
+                                    </>
+                                ) : (
+                                    <p>No item to show</p>
+                                )}
+                                {numberOfPages > 1 && (
+                                    <Pagination
+                                        className="single-column-blog"
+                                        currentPage={state.currentPage}
+                                        numberOfPages={numberOfPages}
+                                        onClick={paginationHandler}
+                                    />
+                                )}
+                            </div>
+                        </Scrollbars>
                     </div>
                 </div>
             </div>
