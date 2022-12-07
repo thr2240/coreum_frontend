@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Scrollbars } from 'react-custom-scrollbars';
+import { Scrollbars } from "react-custom-scrollbars";
 import ContactWidget from "./contact";
 import SortWidget from "./sort";
 import CategoryFilter from "./category-filter";

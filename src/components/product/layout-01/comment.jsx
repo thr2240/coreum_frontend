@@ -1,6 +1,6 @@
 import ClientAvatar from "@ui/client-avatar";
-import { Scrollbars } from 'react-custom-scrollbars';
-import { BsArrowReturnLeft } from 'react-icons/bs';
+import { Scrollbars } from "react-custom-scrollbars";
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 const Comment = ({
     authors,

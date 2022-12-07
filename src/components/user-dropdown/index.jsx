@@ -71,7 +71,7 @@ const UserDropdown = () => {
                     </ul>
                 </div>
                 <div className="add-fund-button mt--20 pb--20">
-                    <button className="btn btn-primary-alta w-100" type="button" onClick={logout}>
+                    <button className="btn btn-primary-alta w-100" type="button">
                         Add Your More Funds
                     </button>
                 </div>

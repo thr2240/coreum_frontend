@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { MdClose } from 'react-icons/md';
-import { TbBrandTelegram } from 'react-icons/tb';
+import { useState } from "react";
+import { MdClose } from "react-icons/md";
+import { TbBrandTelegram } from "react-icons/tb";
 
 const MessageBox = ({ show, onClose }) => {
     return (
