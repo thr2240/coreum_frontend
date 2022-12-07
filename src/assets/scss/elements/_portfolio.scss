@@ -210,6 +210,16 @@
         display: flex;
         align-items: center;
 
+        .profile-share-item {
+            padding: 5px;
+            color: var(--color-primary);
+            cursor: pointer;
+            &:hover {
+                background: var(--color-primary-alta);
+                border-radius: 50%;
+            }
+        }
+
         a {
             position: relative;
             z-index: 1;

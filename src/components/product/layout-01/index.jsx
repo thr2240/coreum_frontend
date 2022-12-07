@@ -2,14 +2,15 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import clsx from "clsx";
+import { TbHeart, TbMessageCircle2, TbBrandTelegram, TbCheck } from 'react-icons/tb';
 import Anchor from "@ui/anchor";
 import CountdownTimer from "@ui/countdown/layout-01";
-import ClientAvatar from "@ui/client-avatar";
 import ShareDropdown from "@components/share-dropdown";
 import ProductBid from "@components/product-bid";
 import Button from "@ui/button";
 import { ImageType } from "@utils/types";
 import PlaceBidModal from "@components/modals/placebid-modal";
+import Comment from "./comment";
 
 const Product = ({
     overlay,
@@ -26,9 +27,17 @@ const Product = ({
     disableShareDropdown,
 }) => {
     const [showBidModal, setShowBidModal] = useState(false);
+    const [favorite, setFavorite] = useState(false);
+    const [comment, setComment] = useState(false);
     const handleBidModal = () => {
         setShowBidModal((prev) => !prev);
     };
+    const handleFavorite = () => {
+        setFavorite((prev) => !prev);
+    }
+    const handleComment = () => {
+        setComment((prev) => !prev);
+    }
     return (
         <>
             <div
@@ -58,27 +67,29 @@ const Product = ({
                 </div>
                 <div className="product-share-wrapper">
                     <div className="profile-share">
-                        {authors?.map((client) => (
-                            <ClientAvatar
-                                key={client.name}
-                                slug={client.slug}
-                                name={client.name}
-                                image={client.image}
-                            />
-                        ))}
-                        <Anchor
-                            className="more-author-text"
-                            path={`/product/${slug}`}
-                        >
-                            {bitCount}+ Place Bit.
-                        </Anchor>
+                        <div className="profile-share-item" onClick={handleFavorite} >
+                            {favorite ?
+                                <TbCheck size="25px" />
+                                : <TbHeart size="25px" />
+                            }
+                        </div>
+                        <div className="profile-share-item" onClick={handleComment}>
+                            <TbMessageCircle2 size="25px" />
+                            {
+                                comment && (
+                                    <Comment authors={authors} onClick={handleComment} />
+                                )
+                            }
+                        </div>
+                        <div className="profile-share-item">
+                            <TbBrandTelegram size="25px" />
+                        </div>
                     </div>
                     {!disableShareDropdown && <ShareDropdown />}
                 </div>
                 <Anchor path={`/product/${slug}`}>
                     <span className="product-name">{title}</span>
                 </Anchor>
-                <span className="latest-bid">Highest bid {latestBid}</span>
                 <ProductBid price={price} likeCount={likeCount} />
             </div>
             <PlaceBidModal show={showBidModal} handleModal={handleBidModal} />

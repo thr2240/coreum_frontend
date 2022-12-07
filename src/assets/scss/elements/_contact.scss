@@ -37,3 +37,57 @@
         }
     }
 }
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 150px, 0);
+        transform: translate3d(0, 150px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 150px, 0);
+        transform: translate3d(0, 150px, 0);
+    }
+}
+
+.message-box-widget {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #242435;
+    width: 450px;
+    height: 450px;
+    padding: 30px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    .message-textarea {
+        height: 170px;
+    }
+    transition: fadeInUp 0.3s ease-in-out;
+    &.fadeOutDown {
+        transition: fadeOutDown 0.3s ease-in-out;
+    }
+}
+
+.contact_info, .modal_close {
+    cursor: pointer;
+    &:hover {
+        color: var(--color-primary);
+    }
+}

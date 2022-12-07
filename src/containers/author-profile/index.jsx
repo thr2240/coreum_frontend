@@ -62,7 +62,7 @@ const AuthorProfileArea = ({ className, data }) => {
                             {onSaleProducts?.map((prod) => (
                                 <div
                                     key={prod.id}
-                                    className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                                    className="col-lg-3 col-md-6 col-sm-6 col-12" // col-5 
                                 >
                                     <Product
                                         overlay
@@ -87,7 +87,7 @@ const AuthorProfileArea = ({ className, data }) => {
                             {ownedProducts?.map((prod) => (
                                 <div
                                     key={prod.id}
-                                    className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                                    className="col-lg-3 col-md-6 col-sm-6 col-12"
                                 >
                                     <Product
                                         overlay
@@ -112,7 +112,7 @@ const AuthorProfileArea = ({ className, data }) => {
                             {createdProducts?.map((prod) => (
                                 <div
                                     key={prod.id}
-                                    className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                                    className="col-lg-3 col-md-6 col-sm-6 col-12"
                                 >
                                     <Product
                                         overlay
@@ -137,7 +137,7 @@ const AuthorProfileArea = ({ className, data }) => {
                             {likedProducts?.map((prod) => (
                                 <div
                                     key={prod.id}
-                                    className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                                    className="col-lg-3 col-md-6 col-sm-6 col-12"
                                 >
                                     <Product
                                         overlay

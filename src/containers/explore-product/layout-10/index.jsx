@@ -2,12 +2,18 @@ import { useReducer, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Scrollbars } from 'react-custom-scrollbars';
+import TabContent from "react-bootstrap/TabContent";
+import TabContainer from "react-bootstrap/TabContainer";
+import TabPane from "react-bootstrap/TabPane";
+import Nav from "react-bootstrap/Nav";
 import SectionTitle from "@components/section-title/layout-02";
 import ProductFilter from "@components/product-filter/layout-03";
 import Product from "@components/product/layout-01";
 import Pagination from "@components/pagination-02";
+import AuthorProfileArea from "@containers/author-profile";
 import { SectionTitleType, ProductType } from "@utils/types";
 import { flatDeep } from "@utils/methods";
+import { shuffleArray } from "@utils/methods";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -41,6 +47,11 @@ const ExploreProductArea = ({
         sort: "newest",
         currentPage: 1,
     });
+
+    const onSaleProducts = shuffleArray(products).slice(0, 10);
+    const ownedProducts = shuffleArray(products).slice(0, 10);
+    const createdProducts = shuffleArray(products).slice(0, 10);
+    const likedProducts = shuffleArray(products).slice(0, 10);
 
     /* Pagination logic start */
     const numberOfPages = Math.ceil(state.allProducts.length / POSTS_PER_PAGE);
@@ -199,58 +210,260 @@ const ExploreProductArea = ({
                         )}
                     </div>
                 </div>
+
                 <div className="row g-5">
-                    <div className="col-lg-3 order-2 order-lg-1">
-                        <ProductFilter
-                            sortHandler={sortHandler}
-                            inputs={state.inputs}
-                            sort={state.sort}
-                            categories={categories}
-                            levels={levels}
-                            filterHandler={filterHandler}
-                            priceHandler={priceHandler}
-                        />
-                    </div>
-                    <div className="col-lg-9 order-1 order-lg-2">
-                        <Scrollbars autoHide style={{ height: "100vh", overflowX: 'hidden' }}
-                            renderThumbVertical={({ style, ...props }) =>
-                                <div {...props} className={'thumb-horizontal'} />
-                            }>
-                            <div className="row g-5">
-                                {state.products.length > 0 ? (
-                                    <>
-                                        {state.products.map((prod) => (
-                                            <div
-                                                key={prod.id}
-                                                className="col-lg-3 col-md-4 col-sm-12"
-                                            >
-                                                <Product
-                                                    placeBid={!!placeBid}
-                                                    title={prod.title}
-                                                    slug={prod.slug}
-                                                    latestBid={prod.latestBid}
-                                                    price={prod.price}
-                                                    likeCount={prod.likeCount}
-                                                    image={prod.images?.[0]}
-                                                    authors={prod.authors}
-                                                    bitCount={prod.bitCount}
-                                                />
-                                            </div>
-                                        ))}
-                                    </>
-                                ) : (
-                                    <p>No item to show</p>
-                                )}
-                                {numberOfPages > 1 && (
-                                    <Pagination
-                                        className="single-column-blog"
-                                        currentPage={state.currentPage}
-                                        numberOfPages={numberOfPages}
-                                        onClick={paginationHandler}
-                                    />
-                                )}
+                    <div className={clsx("rn-authore-profile-area", className)}>
+                        <TabContainer defaultActiveKey="nav-profile">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-12">
+                                        <div className="tab-wrapper-one">
+                                            <nav className="tab-button-one">
+                                                <Nav
+                                                    className="nav nav-tabs"
+                                                    id="nav-tab"
+                                                    role="tablist"
+                                                >
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-auction"
+                                                    >
+                                                        Auction
+                                                    </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-collections"
+                                                    >
+                                                        Collections
+                                                    </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-home"
+                                                    >
+                                                        On Sale
+                                                    </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-profile"
+                                                    >
+                                                        Owned
+                                                    </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-contact"
+                                                    >
+                                                        Created
+                                                    </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-liked"
+                                                    >
+                                                        Liked
+                                                    </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        eventKey="nav-activity"
+                                                    >
+                                                        Activity
+                                                    </Nav.Link>
+                                                </Nav>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-lg-2 order-2 order-lg-1">
+                                        <ProductFilter
+                                            sortHandler={sortHandler}
+                                            inputs={state.inputs}
+                                            sort={state.sort}
+                                            categories={categories}
+                                            levels={levels}
+                                            filterHandler={filterHandler}
+                                            priceHandler={priceHandler}
+                                        />
+                                    </div>
+                                    <div className="col-lg-10 order-1 order-lg-2">
+                                        <Scrollbars autoHide style={{ height: "100vh", overflowX: 'hidden' }}
+                                            renderThumbVertical={({ style, ...props }) =>
+                                                <div {...props} className={'thumb-horizontal'} />
+                                            }>
+                                            <TabContent className="tab-content rn-bid-content">
+                                                <TabPane className="row d-flex g-5" eventKey="nav-auction">
+                                                    {onSaleProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12" // col-5 
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                                <TabPane className="row d-flex g-5" eventKey="nav-home">
+                                                    {onSaleProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12" // col-5 
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                                <TabPane
+                                                    className="row g-5 d-flex"
+                                                    eventKey="nav-profile"
+                                                >
+                                                    {ownedProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                                <TabPane
+                                                    className="row g-5 d-flex"
+                                                    eventKey="nav-contact"
+                                                >
+                                                    {createdProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                                <TabPane
+                                                    className="row g-5 d-flex"
+                                                    eventKey="nav-liked"
+                                                >
+                                                    {likedProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                                <TabPane
+                                                    className="row g-5 d-flex"
+                                                    eventKey="nav-collections"
+                                                >
+                                                    {likedProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                                <TabPane
+                                                    className="row g-5 d-flex"
+                                                    eventKey="nav-activity"
+                                                >
+                                                    {likedProducts?.map((prod) => (
+                                                        <div
+                                                            key={prod.id}
+                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                        >
+                                                            <Product
+                                                                overlay
+                                                                placeBid
+                                                                title={prod.title}
+                                                                slug={prod.slug}
+                                                                latestBid={prod.latestBid}
+                                                                price={prod.price}
+                                                                likeCount={prod.likeCount}
+                                                                auction_date={prod.auction_date}
+                                                                image={prod.images?.[0]}
+                                                                authors={prod.authors}
+                                                                bitCount={prod.bitCount}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </TabPane>
+                                            </TabContent>
+                                        </Scrollbars>
+                                    </div>
+                                </div>
                             </div>
-                        </Scrollbars>
+                        </TabContainer>
                     </div>
                 </div>
             </div>
