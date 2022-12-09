@@ -23,9 +23,9 @@ const SortableItem = SortableElement(({ item }) => {
     </div >
   );
 });
-const SortableList = SortableContainer(({ items }) => {
+const SortableList = SortableContainer(({ grid5columns, items }) => {
   return (
-    <div className="grid-container">
+    <div className={grid5columns ? "grid-container grid-5-container" : "grid-container" }>
       {items.map((item, index) => (
         <SortableItem key={item.id} index={index} item={item} />
       ))}
@@ -33,7 +33,7 @@ const SortableList = SortableContainer(({ items }) => {
   );
 });
 
-const SortableExplorer = ({ products }) => {
+const SortableExplorer = ({ grid5columns, products }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -49,6 +49,7 @@ const SortableExplorer = ({ products }) => {
 
   return (
     <SortableList
+      grid5columns={grid5columns}
       items={items}
       onSortEnd={onSortEndHandler}
       axis="xy"

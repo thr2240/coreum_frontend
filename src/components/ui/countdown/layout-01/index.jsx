@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CountdownTimer = ({ date }) => {
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
-        if (completed) return <div>Completed</div>;
+        if (completed) return <div></div>;
         return (
             <div className="countdown">
                 <div className="countdown-container days">

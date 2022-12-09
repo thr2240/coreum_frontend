@@ -285,7 +285,7 @@ const ExploreProductArea = ({
                                       <span>More Options</span>
                                       <div className="more_options_list">
                                         <ul>
-                                          <li onClick={handle5Columns}>5 Columns</li>
+                                          <li onClick={handle5Columns}>{grid5columns ? "4 Columns" : "5 Columns"}</li>
                                           <li>
                                             <Nav.Link
                                               as="span"
@@ -325,25 +325,25 @@ const ExploreProductArea = ({
                         }>
                         <TabContent className="tab-content rn-bid-content">
                           <TabPane className="row d-flex g-5" eventKey="nav-auction">
-                            <SortableExplorer products={onSaleProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={onSaleProducts} />
                           </TabPane>
                           <TabPane className="row d-flex g-5" eventKey="nav-home">
-                            <SortableExplorer products={onSaleProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={onSaleProducts} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex" eventKey="nav-profile">
-                            <SortableExplorer products={ownedProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={ownedProducts} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex" eventKey="nav-contact">
-                            <SortableExplorer products={createdProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={createdProducts} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex" eventKey="nav-liked">
-                            <SortableExplorer products={likedProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex" eventKey="nav-collections">
-                            <SortableExplorer products={likedProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex" eventKey="nav-activity">
-                            <SortableExplorer products={likedProducts} />
+                            <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
                           </TabPane>
                           <TabPane
                             className="row g-5 d-flex"
