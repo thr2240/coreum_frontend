@@ -223,88 +223,89 @@ const ExploreProductArea = ({
             <TabContainer defaultActiveKey="nav-profile">
               <StickyContainer>
                 <div className="container-fluid">
-                  <Sticky topOffset={-85}>
-                    {({ style }) => {
-                      return (
-                        <div className="row author_header" style={{ ...style, top: '85px' }}>
-                          <div className="col-12">
-                            <div className="tab-wrapper-one">
-                              <nav className="tab-button-one">
-                                <Nav
-                                  className="nav nav-tabs"
-                                  id="nav-tab"
-                                  role="tablist"
-                                >
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-auction"
+                  <div style={{ position: 'relative', zIndex: '99' }}>
+                    <Sticky topOffset={-85}>
+                      {({ style }) => {
+                        return (
+                          <div className="row author_header" style={{ ...style, top: '85px' }}>
+                            <div className="col-12">
+                              <div className="tab-wrapper-one">
+                                <nav className="tab-button-one">
+                                  <Nav
+                                    className="nav nav-tabs"
+                                    id="nav-tab"
+                                    role="tablist"
                                   >
-                                    Auction
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-collections"
-                                  >
-                                    Collections
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-home"
-                                  >
-                                    On Sale
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-profile"
-                                  >
-                                    Owned
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-contact"
-                                  >
-                                    Created
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-liked"
-                                  >
-                                    Liked
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    eventKey="nav-activity"
-                                  >
-                                    Activity
-                                  </Nav.Link>
-                                  <Nav.Link
-                                    as="button"
-                                    className="more_options"
-                                  >
-                                    <span>More Options</span>
-                                    <div className="more_options_list">
-                                      <ul>
-                                        <li onClick={handle5Columns}>5 Columns</li>
-                                        <li>
-                                          <Nav.Link
-                                            as="span"
-                                            eventKey="nav-walkthru"
-                                          >
-                                            Walk Through
-                                          </Nav.Link>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </Nav.Link>
-                                </Nav>
-                              </nav>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-auction"
+                                    >
+                                      Auction
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-collections"
+                                    >
+                                      Collections
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-home"
+                                    >
+                                      On Sale
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-profile"
+                                    >
+                                      Owned
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-contact"
+                                    >
+                                      Created
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-liked"
+                                    >
+                                      Liked
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-activity"
+                                    >
+                                      Activity
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      className="more_options"
+                                    >
+                                      <span>More Options</span>
+                                      <div className="more_options_list">
+                                        <ul>
+                                          <li onClick={handle5Columns}>5 Columns</li>
+                                          <li>
+                                            <Nav.Link
+                                              as="span"
+                                              eventKey="nav-walkthru"
+                                            >
+                                              Walk Through
+                                            </Nav.Link>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </Nav.Link>
+                                  </Nav>
+                                </nav>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      );
-                    }}
-                  </Sticky>
-
+                        );
+                      }}
+                    </Sticky>
+                  </div>
                   <div className="row">
                     <div className="col-lg-2 order-2 order-lg-1">
                       <ProductFilter
