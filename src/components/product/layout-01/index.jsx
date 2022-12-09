@@ -24,7 +24,7 @@ const Product = ({
     bitCount,
     authors,
     placeBid,
-    disableShareDropdown,
+    disableShareDropdown = true,
 }) => {
     const [showBidModal, setShowBidModal] = useState(false);
     const [favorite, setFavorite] = useState(false);
@@ -86,11 +86,12 @@ const Product = ({
                         </div>
                     </div>
                     {!disableShareDropdown && <ShareDropdown />}
+                    {auction_date && <div className="auction_star"></div>}
                 </div>
-                <Anchor path={`/product/${slug}`}>
+                {/* <Anchor path={`/product/${slug}`}>
                     <span className="product-name">{title}</span>
                 </Anchor>
-                <ProductBid price={price} likeCount={likeCount} />
+                <ProductBid price={price} likeCount={likeCount} /> */}
             </div>
             <PlaceBidModal show={showBidModal} handleModal={handleBidModal} />
         </>

@@ -224,9 +224,17 @@
 
 .rn-header {
     .logo-thumbnail {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
         padding-right: 32px;
         position: relative;
         margin-right: 17px;
+        .logo-title {
+            font-size: 24px;
+            color: white;
+        }
         @media #{$large-mobile} {
             padding-right: 0;
             margin-right: 0;

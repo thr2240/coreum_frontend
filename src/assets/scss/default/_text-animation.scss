@@ -13,6 +13,20 @@
     }
 }
 
+@keyframes customTwo {
+    0% {
+        -webkit-transform: translateY(0%) scale(0);
+        transform: translateY(0%) scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: translateY(0%) scale(1.3);
+        transform: translateY(0%) scale(1.3);
+        opacity: 0
+    }
+}
+
 @keyframes liveAuction {
     0% {
         background: var(--color-white);

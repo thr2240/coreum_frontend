@@ -14,6 +14,7 @@ import AuthorProfileArea from "@containers/author-profile";
 import { SectionTitleType, ProductType } from "@utils/types";
 import { flatDeep } from "@utils/methods";
 import { shuffleArray } from "@utils/methods";
+import { useState } from "react";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -47,6 +48,7 @@ const ExploreProductArea = ({
         sort: "newest",
         currentPage: 1,
     });
+    const [grid5columns, setGrid5Columns] = useState(false);
 
     const onSaleProducts = shuffleArray(products).slice(0, 10);
     const ownedProducts = shuffleArray(products).slice(0, 10);
@@ -160,6 +162,10 @@ const ExploreProductArea = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.inputs]);
 
+    const handle5Columns = useCallback(() => {
+        setGrid5Columns(prev => !prev);
+    }, [grid5columns]);
+
     useEffect(() => {
         itemFilterHandler();
     }, [itemFilterHandler]);
@@ -202,8 +208,8 @@ const ExploreProductArea = ({
             )}
             id="explore-id"
         >
-            <div className="container">
-                <div className="row mb--40">
+            <div className="container-fluid">
+                <div className="row">
                     <div className="col-12">
                         {section_title && (
                             <SectionTitle disableAnimation {...section_title} />
@@ -214,7 +220,7 @@ const ExploreProductArea = ({
                 <div className="row g-5">
                     <div className={clsx("rn-authore-profile-area", className)}>
                         <TabContainer defaultActiveKey="nav-profile">
-                            <div className="container">
+                            <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="tab-wrapper-one">
@@ -266,6 +272,25 @@ const ExploreProductArea = ({
                                                     >
                                                         Activity
                                                     </Nav.Link>
+                                                    <Nav.Link
+                                                        as="button"
+                                                        className="more_options"
+                                                    >
+                                                        <span>More Options</span>
+                                                        <div className="more_options_list">
+                                                            <ul>
+                                                                <li onClick={handle5Columns}>5 Columns</li>
+                                                                <li>
+                                                                    <Nav.Link
+                                                                        as="span"
+                                                                        eventKey="nav-walkthru"
+                                                                    >
+                                                                        Walk Through
+                                                                    </Nav.Link>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </Nav.Link>
                                                 </Nav>
                                             </nav>
                                         </div>
@@ -293,7 +318,7 @@ const ExploreProductArea = ({
                                                     {onSaleProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12" // col-5 
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -315,7 +340,7 @@ const ExploreProductArea = ({
                                                     {onSaleProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12" // col-5 
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -340,7 +365,7 @@ const ExploreProductArea = ({
                                                     {ownedProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -365,7 +390,7 @@ const ExploreProductArea = ({
                                                     {createdProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -390,7 +415,7 @@ const ExploreProductArea = ({
                                                     {likedProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -415,7 +440,7 @@ const ExploreProductArea = ({
                                                     {likedProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -440,7 +465,7 @@ const ExploreProductArea = ({
                                                     {likedProducts?.map((prod) => (
                                                         <div
                                                             key={prod.id}
-                                                            className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                                            className={grid5columns ? `col-lg-3 col-md-6 col-sm-6 col-12 col-5` : `col-lg-3 col-md-6 col-sm-6 col-12`} // col-5 
                                                         >
                                                             <Product
                                                                 overlay
@@ -457,6 +482,17 @@ const ExploreProductArea = ({
                                                             />
                                                         </div>
                                                     ))}
+                                                </TabPane>
+                                                <TabPane
+                                                    className="row g-5 d-flex"
+                                                    eventKey="nav-walkthru"
+                                                >
+                                                    <iframe
+                                                        title="Walk Through"
+                                                        src={'http://192.168.103.57:9966'}
+                                                        frameBorder="0"
+                                                        className="walk_thru"
+                                                    ></iframe>
                                                 </TabPane>
                                             </TabContent>
                                         </Scrollbars>

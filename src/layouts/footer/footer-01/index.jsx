@@ -16,7 +16,7 @@ import contactData from "../../../data/general/contact.json";
 
 const Footer = ({ space, className, data }) => (
     <>
-        <div
+        {/* <div
             className={clsx(
                 "rn-footer-one bg-color--1",
                 space === 1 && "rn-section-gap mt--100 mt_md--80 mt_sm--80",
@@ -79,9 +79,9 @@ const Footer = ({ space, className, data }) => (
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="copy-right-one ptb--20 bg-color--1">
-            <div className="container">
+        </div> */}
+        <div className="copy-right-one ptb--20 bg-color--1 mt--20">
+            <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                         <div className="copyright-left">
