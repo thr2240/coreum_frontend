@@ -330,3 +330,30 @@
 .walk_thru {
     height: 100vh;
 }
+
+.author_header {
+    z-index: 99;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    @media only screen and (max-width: 991px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (max-width: 579px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-item {
+    height: fit-content;
+    user-select: none;
+    cursor: all-scroll;
+}
+
+.sortableHelperClass {
+    cursor: row-resize;
+}

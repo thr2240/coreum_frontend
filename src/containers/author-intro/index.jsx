@@ -25,7 +25,7 @@ const AuthorIntroArea = ({ className, space, data }) => {
                     quality={100}
                     priority
                 />
-                <div className="container-fluid">
+                <div className="container">
                     <div className="user-thumbnail">
                         <Image
                             // src={
