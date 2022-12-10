@@ -7,6 +7,7 @@ import TabContainer from "react-bootstrap/TabContainer";
 import TabPane from "react-bootstrap/TabPane";
 import Nav from "react-bootstrap/Nav";
 import { StickyContainer, Sticky } from 'react-sticky';
+import { SlClose } from 'react-icons/sl';
 import SectionTitle from "@components/section-title/layout-02";
 import ProductFilter from "@components/product-filter/layout-03";
 import Product from "@components/product/layout-01";
@@ -50,6 +51,7 @@ const ExploreProductArea = ({
     currentPage: 1,
   });
   const [grid5columns, setGrid5Columns] = useState(false);
+  const [walkThru, setWalkThru] = useState(false);
 
   const onSaleProducts = shuffleArray(products).slice(0, 10);
   const ownedProducts = shuffleArray(products).slice(0, 10);
@@ -166,6 +168,16 @@ const ExploreProductArea = ({
   const handle5Columns = useCallback(() => {
     setGrid5Columns(prev => !prev);
   }, [grid5columns]);
+
+  const handleWalk = useCallback(() => {
+    setWalkThru(true);
+    document.body.classList.add('walk_mode');
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setWalkThru(false);
+    document.body.classList.remove('walk_mode');
+  }, []);
 
   useEffect(() => {
     itemFilterHandler();
@@ -286,14 +298,7 @@ const ExploreProductArea = ({
                                       <div className="more_options_list">
                                         <ul>
                                           <li onClick={handle5Columns}>{grid5columns ? "4 Columns" : "5 Columns"}</li>
-                                          <li>
-                                            <Nav.Link
-                                              as="span"
-                                              eventKey="nav-walkthru"
-                                            >
-                                              Walk Through
-                                            </Nav.Link>
-                                          </li>
+                                          <li onClick={handleWalk}>Walk Through</li>
                                         </ul>
                                       </div>
                                     </Nav.Link>
@@ -345,17 +350,6 @@ const ExploreProductArea = ({
                           <TabPane className="row g-5 d-flex" eventKey="nav-activity">
                             <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
                           </TabPane>
-                          <TabPane
-                            className="row g-5 d-flex"
-                            eventKey="nav-walkthru"
-                          >
-                            <iframe
-                              title="Walk Through"
-                              src={'http://192.168.103.57:9966'}
-                              frameBorder="0"
-                              className="walk_thru"
-                            ></iframe>
-                          </TabPane>
                         </TabContent>
                       </Scrollbars>
                     </div>
@@ -364,6 +358,18 @@ const ExploreProductArea = ({
               </StickyContainer>
 
             </TabContainer>
+            {walkThru && (
+              <div className="walk_thru_container">
+                <iframe
+                  title="Walk Through"
+                  src={'http://192.168.103.57:9966'}
+                  className="walk_thru"
+                ></iframe>
+                <div className="walk_close" onClick={handleClose}>
+                  <SlClose size="40px" />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
