@@ -16,7 +16,7 @@ const CategoryFilter = ({ categories, onChange }) => {
     }, [isCheck, onChange]);
 
     return (
-        <div className="nuron-expo-filter-widget widget-category mt--30">
+        <div className="nuron-expo-filter-widget widget-category mb--30">
             <div className="inner">
                 <h5 className="widget-title">Categories</h5>
                 <div className="content">

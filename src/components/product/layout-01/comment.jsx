@@ -1,13 +1,15 @@
 import ClientAvatar from "@ui/client-avatar";
+import clsx from "clsx";
 import { Scrollbars } from "react-custom-scrollbars";
 import { BsArrowReturnLeft } from "react-icons/bs";
 
 const Comment = ({
+    show,
     authors,
     onReturn
 }) => {
     return (
-        <div className="product_comments">
+        <div className={clsx("product_comments", show ? '' : 'd-none')}>
             <Scrollbars autoHide style={{ height: "100%", overflowX: 'hidden' }}
                 renderThumbVertical={({ style, ...props }) =>
                     <div {...props} className={'thumb-horizontal'} />

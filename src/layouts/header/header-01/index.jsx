@@ -41,7 +41,7 @@ const Header = ({ className }) => {
                                     id="sideNav"
                                     className="mainmenu-nav d-none d-xl-block"
                                 >
-                                    {/* <MainMenu menu={menuData} /> */}
+                                    <MainMenu menu={menuData} />
                                 </nav>
                             </div>
                         </div>

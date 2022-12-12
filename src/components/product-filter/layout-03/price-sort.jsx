@@ -6,7 +6,7 @@ const PriceSort = ({ onChange, value }) => {
         onChange(currentValue);
     };
     return (
-        <div className="nuron-expo-filter-widget widget-shortby mt--30">
+        <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
                 <h5 className="widget-title">Sort By Price</h5>
                 <div className="content">

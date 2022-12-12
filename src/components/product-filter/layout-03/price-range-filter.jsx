@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import InputRange from "@ui/input-range";
 
 const PriceRangeFilter = ({ values, onChange }) => (
-    <div className="nuron-expo-filter-widget widget-shortby mt--30">
+    <div className="nuron-expo-filter-widget widget-shortby mb--30">
         <div className="inner">
             <h5 className="widget-title">Filter By Price</h5>
             <div className="content">

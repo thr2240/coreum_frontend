@@ -31,7 +31,7 @@ const LevelFilter = ({ onChange, levels }) => {
     }, [isCheck, onChange]);
 
     return (
-        <div className="nuron-expo-filter-widget widget-shortby mt--30">
+        <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
                 <h5 className="widget-title">Level</h5>
                 <div className="content">

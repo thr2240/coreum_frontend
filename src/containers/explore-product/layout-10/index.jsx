@@ -8,6 +8,7 @@ import TabPane from "react-bootstrap/TabPane";
 import Nav from "react-bootstrap/Nav";
 import { StickyContainer, Sticky } from 'react-sticky';
 import { SlClose } from 'react-icons/sl';
+import { FiCheck } from 'react-icons/fi';
 import SectionTitle from "@components/section-title/layout-02";
 import ProductFilter from "@components/product-filter/layout-03";
 import Product from "@components/product/layout-01";
@@ -17,6 +18,18 @@ import SortableExplorer from "./sortable-explorer";
 import { SectionTitleType, ProductType } from "@utils/types";
 import { flatDeep } from "@utils/methods";
 import { shuffleArray } from "@utils/methods";
+
+const GRID_COLUMN = {
+  GRID_2: 2,
+  GRID_3: 3,
+  GRID_4: 4,
+  GRID_5: 5
+}
+
+const NFT_EFFECT = {
+  CARD_FLIP: 0,
+  SPHERE_VIEW: 1
+}
 
 function reducer(state, action) {
   switch (action.type) {
@@ -50,8 +63,9 @@ const ExploreProductArea = ({
     sort: "newest",
     currentPage: 1,
   });
-  const [grid5columns, setGrid5Columns] = useState(false);
+  const [gridcolumns, setGridColumns] = useState(GRID_COLUMN.GRID_4);
   const [walkThru, setWalkThru] = useState(false);
+  const [effect, setEffect] = useState(NFT_EFFECT.CARD_FLIP);
 
   const onSaleProducts = shuffleArray(products).slice(0, 10);
   const ownedProducts = shuffleArray(products).slice(0, 10);
@@ -165,13 +179,17 @@ const ExploreProductArea = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.inputs]);
 
-  const handle5Columns = useCallback(() => {
-    setGrid5Columns(prev => !prev);
-  }, [grid5columns]);
+  const handleColumns = useCallback((val) => {
+    setGridColumns(val);
+  }, []);
 
   const handleWalk = useCallback(() => {
     setWalkThru(true);
     document.body.classList.add('walk_mode');
+  }, []);
+
+  const handleEffect = useCallback((val) => {
+    setEffect(val);
   }, []);
 
   const handleClose = useCallback(() => {
@@ -292,13 +310,52 @@ const ExploreProductArea = ({
                                     </Nav.Link>
                                     <Nav.Link
                                       as="button"
+                                      eventKey="nav-games"
+                                    >
+                                      Games
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-comingsoon"
+                                    >
+                                      Coming Soon
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
                                       className="more_options"
                                     >
                                       <span>More Options</span>
                                       <div className="more_options_list">
                                         <ul>
-                                          <li onClick={handle5Columns}>{grid5columns ? "4 Columns" : "5 Columns"}</li>
-                                          <li onClick={handleWalk}>Walk Through</li>
+                                          <li onClick={() => handleColumns(GRID_COLUMN.GRID_2)}>
+                                            {gridcolumns === GRID_COLUMN.GRID_2 && <FiCheck />}
+                                            <span>2 Columns</span>
+                                          </li>
+                                          <li onClick={() => handleColumns(GRID_COLUMN.GRID_3)}>
+                                            {gridcolumns === GRID_COLUMN.GRID_3 && <FiCheck />}
+                                            <span>3 Columns</span>
+                                          </li>
+                                          <li onClick={() => handleColumns(GRID_COLUMN.GRID_4)}>
+                                            {gridcolumns === GRID_COLUMN.GRID_4 && <FiCheck />}
+                                            <span>4 Columns</span>
+                                          </li>
+                                          <li onClick={() => handleColumns(GRID_COLUMN.GRID_5)}>
+                                            {gridcolumns === GRID_COLUMN.GRID_5 && <FiCheck />}
+                                            <span>5 Columns</span>
+                                          </li>
+                                          <hr className="mt--5 mb--5 mr--10 ml--10"/>
+                                          <li onClick={() => handleEffect(NFT_EFFECT.CARD_FLIP)}>
+                                            {effect === NFT_EFFECT.CARD_FLIP && <FiCheck />}
+                                            <span>Card Flip</span>
+                                          </li>
+                                          <li onClick={() => handleEffect(NFT_EFFECT.SPHERE_VIEW)}>
+                                            {effect === NFT_EFFECT.SPHERE_VIEW && <FiCheck />}
+                                            <span>Sphere View</span>
+                                          </li>
+                                          <hr className="mt--5 mb--5 mr--10 ml--10"/>
+                                          <li onClick={handleWalk}>
+                                            <span>Walk Through</span>
+                                          </li>
                                         </ul>
                                       </div>
                                     </Nav.Link>
@@ -311,8 +368,8 @@ const ExploreProductArea = ({
                       }}
                     </Sticky>
                   </div>
-                  <div className="row">
-                    <div className="col-lg-2 order-2 order-lg-1">
+                  <div className="author-explorer">
+                    <div className="author-filter">
                       <ProductFilter
                         sortHandler={sortHandler}
                         inputs={state.inputs}
@@ -323,32 +380,36 @@ const ExploreProductArea = ({
                         priceHandler={priceHandler}
                       />
                     </div>
-                    <div className="col-lg-10 order-1 order-lg-2">
+                    <div className="author-container">
                       <Scrollbars autoHide style={{ height: "100vh", overflowX: 'hidden' }}
                         renderThumbVertical={({ style, ...props }) =>
                           <div {...props} className={'thumb-horizontal'} />
                         }>
                         <TabContent className="tab-content rn-bid-content">
-                          <TabPane className="row d-flex g-5" eventKey="nav-auction">
-                            <SortableExplorer grid5columns={grid5columns} products={onSaleProducts} />
+                          <TabPane className="row d-flex g-5 w-100 ml--0 mr--0" eventKey="nav-auction">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={onSaleProducts} />
                           </TabPane>
-                          <TabPane className="row d-flex g-5" eventKey="nav-home">
-                            <SortableExplorer grid5columns={grid5columns} products={onSaleProducts} />
+                          <TabPane className="row d-flex g-5 w-100 ml--0 mr--0" eventKey="nav-home">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={onSaleProducts} />
                           </TabPane>
-                          <TabPane className="row g-5 d-flex" eventKey="nav-profile">
-                            <SortableExplorer grid5columns={grid5columns} products={ownedProducts} />
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-profile">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={ownedProducts} />
                           </TabPane>
-                          <TabPane className="row g-5 d-flex" eventKey="nav-contact">
-                            <SortableExplorer grid5columns={grid5columns} products={createdProducts} />
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-contact">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={createdProducts} />
                           </TabPane>
-                          <TabPane className="row g-5 d-flex" eventKey="nav-liked">
-                            <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-liked">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={likedProducts} />
                           </TabPane>
-                          <TabPane className="row g-5 d-flex" eventKey="nav-collections">
-                            <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-collections">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={likedProducts} />
                           </TabPane>
-                          <TabPane className="row g-5 d-flex" eventKey="nav-activity">
-                            <SortableExplorer grid5columns={grid5columns} products={likedProducts} />
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-activity">
+                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={likedProducts} />
+                          </TabPane>
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-games">
+                          </TabPane>
+                          <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-comingsoon">
                           </TabPane>
                         </TabContent>
                       </Scrollbars>

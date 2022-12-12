@@ -16,7 +16,7 @@ const ProductFilter = ({
     categories,
     levels,
 }) => (
-    <Scrollbars autoHide style={{ height: "100vh" }}
+    <Scrollbars className="filter_scrollbar" autoHide
         renderThumbVertical={({ style, ...props }) =>
             <div {...props} className={'thumb-horizontal'} />
         }>

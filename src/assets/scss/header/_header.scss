@@ -344,7 +344,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        flex-basis: 55%;
+        flex-basis: 50%;
         @media #{$lg-layout} {
             flex-basis: 35%;
         }
@@ -362,7 +362,7 @@
     .header-right {
         justify-content: flex-end;
         display: flex;
-        flex-basis: 45%;
+        flex-basis: 50%;
         align-items: center;
 
         @media #{$lg-layout} {

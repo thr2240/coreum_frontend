@@ -4,12 +4,14 @@ import { arrayMoveImmutable as arrayMove } from "array-move";
 import Product from "@components/product/layout-01";
 import { useEffect } from "react";
 
-const SortableItem = SortableElement(({ item }) => {
+const SortableItem = SortableElement(({ item, effect }) => {
   return (
     <div className="grid-item">
       <Product
         overlay
         placeBid
+        effect={effect}
+        index={item.id}
         title={item.title}
         slug={item.slug}
         latestBid={item.latestBid}
@@ -23,17 +25,17 @@ const SortableItem = SortableElement(({ item }) => {
     </div >
   );
 });
-const SortableList = SortableContainer(({ grid5columns, items }) => {
+const SortableList = SortableContainer(({ gridcolumns, effect, items }) => {
   return (
-    <div className={grid5columns ? "grid-container grid-5-container" : "grid-container" }>
+    <div className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container" }>
       {items.map((item, index) => (
-        <SortableItem key={item.id} index={index} item={item} />
+        <SortableItem key={item.id} index={index} item={item} effect={effect} />
       ))}
     </div>
   );
 });
 
-const SortableExplorer = ({ grid5columns, products }) => {
+const SortableExplorer = ({ gridcolumns, effect, products }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -49,7 +51,8 @@ const SortableExplorer = ({ grid5columns, products }) => {
 
   return (
     <SortableList
-      grid5columns={grid5columns}
+      effect={effect}
+      gridcolumns={gridcolumns}
       items={items}
       onSortEnd={onSortEndHandler}
       axis="xy"

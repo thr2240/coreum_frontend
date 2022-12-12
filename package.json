@@ -25,6 +25,7 @@
         "prop-types": "^15.7.2",
         "react": "17.0.2",
         "react-bootstrap": "^2.1.1",
+        "react-card-flip": "^1.2.0",
         "react-countdown": "^2.3.2",
         "react-countup": "^6.1.1",
         "react-custom-scrollbars": "^4.2.1",

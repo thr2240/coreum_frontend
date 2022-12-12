@@ -5,7 +5,7 @@ const ContactWidget = () => {
     const [messageBox, setMessageBox] = useState(false);
 
     return (
-        <div className="nuron-expo-filter-widget widget-shortby">
+        <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
                 <h5 className="widget-title">Contact</h5>
                 <div className="content">
@@ -15,7 +15,7 @@ const ContactWidget = () => {
                     </div>
                     <div className="nuron-form-contact-widget">
                         <i className="feather-user-plus" />
-                        <span className="contact_info">Add to Friend</span>
+                        <span className="contact_info">Add Friend</span>
                     </div>
                     <div className="nuron-form-contact-widget">
                         <i className="feather-user-check" />
