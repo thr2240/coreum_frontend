@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { SortableContainer, SortableElement } from "react-sortable-hoc";
-import { arrayMoveImmutable as arrayMove } from "array-move";
+import { SortableContainer, SortableElement, arrayMove } from "react-sortable-hoc";
 import Product from "@components/product/layout-01";
 import { useEffect } from "react";
 
-const SortableItem = SortableElement(({ item, effect }) => {
+const SortableItem = (({ item, effect }) => {
   return (
     <div className="grid-item">
       <Product

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import clsx from "clsx";
@@ -13,6 +13,7 @@ import Button from "@ui/button";
 import { ImageType } from "@utils/types";
 import PlaceBidModal from "@components/modals/placebid-modal";
 import Comment from "./comment";
+import TileEffect from "./tileeffect";
 
 const NFT_EFFECT = {
     CARD_FLIP: 0,
@@ -43,36 +44,133 @@ const Product = ({
     const handleBidModal = () => {
         setShowBidModal((prev) => !prev);
     };
-    const handleFavorite = () => {
+    const handleFavorite = useCallback(() => {
         setFavorite((prev) => !prev);
+    }, [favorite]);
+    const handleComment = (e) => {
+        e.preventDefault()
+        setComment(true);
     }
+
+    const myRef = useRef()
+
+    useEffect(() => {
+        if (effect === NFT_EFFECT.SPHERE_VIEW) {
+            const tile = myRef.current; //document.querySelector('.product-tile-effect');
+            console.log('>>>>', tile.offsetWidth, tile.offsetHeight)
+            const wrap = new TileEffect(({
+                element: tile,
+                tiltEffect: "reverse"
+            }))
+        }
+    }, [effect]);
 
     return (
         <div className="position-relative">
-            <Anchor path={`/product/${slug}`}>
-                <div className={clsx("card-flip-board", isFlipped && "card-flip-back-board")}
-                    onMouseOver={() => setFlipped(true)}
-                    onMouseLeave={() => setFlipped(false)}
-                ></div>
-            </Anchor>
-            <CardFlip isFlipped={isFlipped}>
-                <div
-                    className={clsx(
-                        "product-style-one",
-                        !overlay && "no-overlay",
-                        placeBid && "with-placeBid"
-                    )}
-                >
-                    <div className="card-thumbnail">
-                        {image?.src && (
-                            <Image
-                                src={image.src}
-                                alt={image?.alt || "NFT_portfolio"}
-                                width={533}
-                                height={533}
-                            />
+            {effect === NFT_EFFECT.CARD_FLIP && (
+                <Anchor path={`/product/${slug}`}>
+                    <div className={clsx("card-flip-board", isFlipped && "card-flip-back-board")}
+                        onMouseOver={() => setFlipped(true)}
+                        onMouseLeave={() => setFlipped(false)}
+                    ></div>
+                </Anchor>
+            )}
+            {effect === NFT_EFFECT.CARD_FLIP ? (
+                <CardFlip isFlipped={isFlipped}>
+                    <div
+                        className={clsx(
+                            "product-style-one",
+                            !overlay && "no-overlay",
+                            placeBid && "with-placeBid"
                         )}
-                        <span className="product_temp_number">{index}</span>
+                    >
+                        <div className="card-thumbnail">
+                            {image?.src && (
+                                <Anchor path={`/product/${slug}`}>
+                                    <Image
+                                        src={image.src}
+                                        alt={image?.alt || "NFT_portfolio"}
+                                        width={533}
+                                        height={533}
+                                    />
+                                </Anchor>
+                            )}
+                            <span className="product_temp_number">{index}</span>
+                        </div>
+                        <div className="product-share-wrapper">
+                            <div className="profile-share">
+                                <div className="profile-share-item" onClick={handleFavorite} >
+                                    {favorite ?
+                                        <TbCheck size="25px" />
+                                        : <TbHeart size="25px" />
+                                    }
+                                </div>
+                                <div className="profile-share-item">
+                                    <TbMessageCircle2 size="25px" onClick={(e) => handleComment(e)} />
+                                    <Comment show={comment} authors={authors} onReturn={() => setComment(false)} />
+                                </div>
+                                <div className="profile-share-item">
+                                    <TbBrandTelegram size="25px" />
+                                </div>
+                            </div>
+                            {auction_date && <div className="auction_star"></div>}
+                        </div>
+                    </div>
+                    <div
+                        className={clsx(
+                            "product-style-one",
+                            "product-style-back"
+                        )}
+                    >
+                        <div className="card-thumbnail-back"></div>
+                        <div className="product-share-wrapper">
+                            <Anchor path={`/product/${slug}`}>
+                                <span className="product-name">{title}</span>
+                            </Anchor>
+                            <span className="latest-bid">Highest bid {latestBid}</span>
+                            <ProductBid price={price} likeCount={likeCount} />
+                            {auction_date && <CountdownTimer date={auction_date} />}
+                            <div className="profile-share">
+                                {authors?.map((client) => (
+                                    <ClientAvatar
+                                        key={client.name}
+                                        slug={client.slug}
+                                        name={client.name}
+                                        image={client.image}
+                                    />
+                                ))}
+                                <Anchor
+                                    className="more-author-text"
+                                    path={`/product/${slug}`}
+                                >
+                                    {bitCount}+ Place Bit.
+                                </Anchor>
+                            </div>
+                            {placeBid && (
+                                <Button onClick={handleBidModal} size="small">
+                                    Place Bid
+                                </Button>
+                            )}
+                        </div>
+
+                    </div>
+                </CardFlip>
+            ) : (
+                <div className={clsx("product-style-one")}>
+                    <div className="product-tile-effect" ref={myRef}>
+                        <div className="card-thumbnail tile-container">
+                            {image?.src && (
+                                <Anchor path={`/product/${slug}`}>
+                                    <Image
+                                        src={image.src}
+                                        alt={image?.alt || "NFT_portfolio"}
+                                        width={533}
+                                        height={533}
+                                    />
+                                </Anchor>
+                            )}
+                            <span className="product_temp_number">{index}</span>
+                        </div>
                     </div>
                     <div className="product-share-wrapper">
                         <div className="profile-share">
@@ -83,8 +181,8 @@ const Product = ({
                                 }
                             </div>
                             <div className="profile-share-item">
-                                <TbMessageCircle2 size="25px" onClick={() => setComment(true)} />
-                                <Comment show={comment} authors={authors} />
+                                <TbMessageCircle2 size="25px" onClick={handleComment} />
+                                <Comment show={comment} authors={authors} onReturn={() => setComment(false)} />
                             </div>
                             <div className="profile-share-item">
                                 <TbBrandTelegram size="25px" />
@@ -93,45 +191,7 @@ const Product = ({
                         {auction_date && <div className="auction_star"></div>}
                     </div>
                 </div>
-                <div
-                    className={clsx(
-                        "product-style-one",
-                        "product-style-back"
-                    )}
-                >
-                    <div className="card-thumbnail-back"></div>
-                    <div className="product-share-wrapper">
-                        <Anchor path={`/product/${slug}`}>
-                            <span className="product-name">{title}</span>
-                        </Anchor>
-                        <span className="latest-bid">Highest bid {latestBid}</span>
-                        <ProductBid price={price} likeCount={likeCount} />
-                        {auction_date && <CountdownTimer date={auction_date} />}
-                        <div className="profile-share">
-                            {authors?.map((client) => (
-                                <ClientAvatar
-                                    key={client.name}
-                                    slug={client.slug}
-                                    name={client.name}
-                                    image={client.image}
-                                />
-                            ))}
-                            <Anchor
-                                className="more-author-text"
-                                path={`/product/${slug}`}
-                            >
-                                {bitCount}+ Place Bit.
-                            </Anchor>
-                        </div>
-                        {placeBid && (
-                            <Button onClick={handleBidModal} size="small">
-                                Place Bid
-                            </Button>
-                        )}
-                    </div>
-
-                </div>
-            </CardFlip>
+            )}
             <PlaceBidModal show={showBidModal} handleModal={handleBidModal} />
         </div>
     );
