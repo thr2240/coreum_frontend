@@ -18,7 +18,7 @@ const AuthorIntroArea = ({ className, space, data }) => {
             />
             <div className="rn-author-bg-area position-relative ptb--100 mb--10">
                 <Image
-                    src="/images/bg/bg-image-9.jpg"
+                    src="/images/banner/banner.png"
                     alt="Slider BG"
                     layout="fill"
                     objectFit="cover"
@@ -33,7 +33,7 @@ const AuthorIntroArea = ({ className, space, data }) => {
                             //         ? data.image.src
                             //         : "/images/profile/profile-01.png"
                             // }
-                            src="/images/profile/profile-01.png"
+                            src="/images/profile/avatar.jpg"
                             alt={data.image?.alt || data.name}
                             width={140}
                             height={140}

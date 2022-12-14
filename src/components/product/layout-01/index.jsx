@@ -100,14 +100,20 @@ const Product = ({
                         <div className="product-share-wrapper">
                             <div className="profile-share">
                                 <div className="profile-share-item" onClick={handleFavorite} >
-                                    {favorite ?
-                                        <TbCheck size="25px" />
-                                        : <TbHeart size="25px" />
-                                    }
+                                    <div className="position-relative">
+                                        {favorite ?
+                                            <TbCheck size="25px" />
+                                            : <TbHeart size="25px" />
+                                        }
+                                        <span className="badge">{Math.floor(Math.random() * 100) + 1}</span>
+                                    </div>
                                 </div>
                                 <div className="profile-share-item">
-                                    <TbMessageCircle2 size="25px" onClick={(e) => handleComment(e)} />
                                     <Comment show={comment} authors={authors} onReturn={() => setComment(false)} />
+                                    <div className="position-relative">
+                                        <TbMessageCircle2 size="25px" onClick={(e) => handleComment(e)} />
+                                        <span className="badge">{Math.floor(Math.random() * 100) + 1}</span>
+                                    </div>
                                 </div>
                                 <div className="profile-share-item">
                                     <TbBrandTelegram size="25px" />
@@ -175,14 +181,20 @@ const Product = ({
                     <div className="product-share-wrapper">
                         <div className="profile-share">
                             <div className="profile-share-item" onClick={handleFavorite} >
-                                {favorite ?
-                                    <TbCheck size="25px" />
-                                    : <TbHeart size="25px" />
-                                }
+                                <div className="position-relative">
+                                    {favorite ?
+                                        <TbCheck size="25px" />
+                                        : <TbHeart size="25px" />
+                                    }
+                                    <span className="badge">{Math.floor(Math.random() * 100) + 1}</span>
+                                </div>
                             </div>
                             <div className="profile-share-item">
-                                <TbMessageCircle2 size="25px" onClick={handleComment} />
                                 <Comment show={comment} authors={authors} onReturn={() => setComment(false)} />
+                                <div className="position-relative">
+                                    <TbMessageCircle2 size="25px" onClick={(e) => handleComment(e)} />
+                                    <span className="badge">{Math.floor(Math.random() * 100) + 1}</span>
+                                </div>
                             </div>
                             <div className="profile-share-item">
                                 <TbBrandTelegram size="25px" />

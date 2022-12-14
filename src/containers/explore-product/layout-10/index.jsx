@@ -14,10 +14,14 @@ import ProductFilter from "@components/product-filter/layout-03";
 import Product from "@components/product/layout-01";
 import Pagination from "@components/pagination-02";
 import AuthorProfileArea from "@containers/author-profile";
-import SortableExplorer from "./sortable-explorer";
 import { SectionTitleType, ProductType } from "@utils/types";
 import { flatDeep } from "@utils/methods";
 import { shuffleArray } from "@utils/methods";
+import CollectionArea from "@containers/collection/layout-01";
+
+import SortableExplorer from "./sortable-explorer";
+import collectionsData from "../../../data/collections.json";
+import { Image } from "react-bootstrap";
 
 const GRID_COLUMN = {
   GRID_2: 2,
@@ -268,15 +272,15 @@ const ExploreProductArea = ({
                                   >
                                     <Nav.Link
                                       as="button"
-                                      eventKey="nav-auction"
-                                    >
-                                      Auction
-                                    </Nav.Link>
-                                    <Nav.Link
-                                      as="button"
                                       eventKey="nav-collections"
                                     >
                                       Collections
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
+                                      eventKey="nav-auction"
+                                    >
+                                      Auction
                                     </Nav.Link>
                                     <Nav.Link
                                       as="button"
@@ -325,6 +329,14 @@ const ExploreProductArea = ({
                                       className="more_options"
                                     >
                                       <span>More Options</span>
+                                      <span className="premium_badge">
+                                        <Image
+                                          src="/images/icons/premium.png"
+                                          alt="premuim"
+                                          width={30}
+                                          height={30}
+                                        />
+                                      </span>
                                       <div className="more_options_list">
                                         <ul>
                                           <li onClick={() => handleColumns(GRID_COLUMN.GRID_2)}>
@@ -343,7 +355,7 @@ const ExploreProductArea = ({
                                             {gridcolumns === GRID_COLUMN.GRID_5 && <FiCheck />}
                                             <span>5 Columns</span>
                                           </li>
-                                          <hr className="mt--5 mb--5 mr--10 ml--10"/>
+                                          <hr className="mt--5 mb--5 mr--10 ml--10" />
                                           <li onClick={() => handleEffect(NFT_EFFECT.CARD_FLIP)}>
                                             {effect === NFT_EFFECT.CARD_FLIP && <FiCheck />}
                                             <span>Card Flip</span>
@@ -352,7 +364,7 @@ const ExploreProductArea = ({
                                             {effect === NFT_EFFECT.SPHERE_VIEW && <FiCheck />}
                                             <span>Sphere View</span>
                                           </li>
-                                          <hr className="mt--5 mb--5 mr--10 ml--10"/>
+                                          <hr className="mt--5 mb--5 mr--10 ml--10" />
                                           <li onClick={handleWalk}>
                                             <span>Walk Through</span>
                                           </li>
@@ -402,7 +414,7 @@ const ExploreProductArea = ({
                             <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={likedProducts} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-collections">
-                            <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={likedProducts} />
+                            <CollectionArea gridcolumns={gridcolumns} collections={collectionsData} />
                           </TabPane>
                           <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-activity">
                             <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={likedProducts} />

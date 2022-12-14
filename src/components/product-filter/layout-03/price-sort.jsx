@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { TbSortDescending2 } from 'react-icons/tb';
 
 const PriceSort = ({ onChange, value }) => {
     const changeHandler = (e) => {
@@ -8,7 +9,9 @@ const PriceSort = ({ onChange, value }) => {
     return (
         <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
-                <h5 className="widget-title">Sort By Price</h5>
+                <h5 className="widget-title">
+                    <TbSortDescending2 /> Sort by Price
+                </h5>
                 <div className="content">
                     <div className="nuron-form-check">
                         <input
@@ -19,7 +22,7 @@ const PriceSort = ({ onChange, value }) => {
                             checked={value === "low-to-high"}
                             onChange={changeHandler}
                         />
-                        <label htmlFor="price-check1">Price: Low to High</label>
+                        <label htmlFor="price-check1">Low to High</label>
                     </div>
                     <div className="nuron-form-check">
                         <input
@@ -30,7 +33,7 @@ const PriceSort = ({ onChange, value }) => {
                             checked={value === "high-to-low"}
                             onChange={changeHandler}
                         />
-                        <label htmlFor="price-check2">Price: High to Low</label>
+                        <label htmlFor="price-check2">High to Low</label>
                     </div>
                 </div>
             </div>

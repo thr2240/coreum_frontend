@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RiContactsFill } from "react-icons/ri";
 import MessageBox from "./message-box";
 
 const ContactWidget = () => {
@@ -7,7 +8,9 @@ const ContactWidget = () => {
     return (
         <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
-                <h5 className="widget-title">Contact</h5>
+                <h5 className="widget-title">
+                    <RiContactsFill /> Contact
+                </h5>
                 <div className="content">
                     <div className="nuron-form-contact-widget">
                         <i className="feather-mail" />

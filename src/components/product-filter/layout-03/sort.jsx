@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { RiSortDesc } from "react-icons/ri";
 
 const SortWidget = ({ onChange, value }) => {
     const changeHandler = (e) => {
@@ -8,7 +9,9 @@ const SortWidget = ({ onChange, value }) => {
     return (
         <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
-                <h5 className="widget-title">Sort By</h5>
+                <h5 className="widget-title">
+                    <RiSortDesc /> Sort By
+                </h5>
                 <div className="content">
                     <div className="nuron-form-check">
                         <input

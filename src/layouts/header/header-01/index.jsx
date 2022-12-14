@@ -6,7 +6,7 @@ import MobileMenu from "@components/menu/mobile-menu";
 import SearchForm from "@components/search-form/layout-01";
 import FlyoutSearchForm from "@components/search-form/layout-02";
 import UserDropdown from "@components/user-dropdown";
-import ColorSwitcher from "@components/color-switcher";
+import Settings from "@components/settings";
 import BurgerButton from "@ui/burger-button";
 import Anchor from "@ui/anchor";
 import Button from "@ui/button";
@@ -93,11 +93,8 @@ const Header = ({ className }) => {
                                     <BurgerButton onClick={offcanvasHandler} />
                                 </div>
                             </div>
-                            <div
-                                id="my_switcher"
-                                className="setting-option my_switcher"
-                            >
-                                <ColorSwitcher />
+                            <div className="setting-option rn-icon-list user-account">
+                                <Settings />
                             </div>
                         </div>
                     </div>

@@ -312,7 +312,11 @@
 .more_options {
     position: relative;
     z-index: 90;
-
+    .premium_badge {
+        position: absolute;
+        top: 0;
+        width: 18px;
+    }
     .more_options_list {
         opacity: 0;
         visibility: hidden;
@@ -475,7 +479,7 @@
 }
 
 .author-filter {
-    width: 210px;
+    width: 220px;
     @media only screen and (max-width: 991px) {
         width: 100%;
         .nu-course-sidebar {
@@ -533,4 +537,48 @@
   .product-tile-effect:hover .tile-container::after {
     width: calc(100% - 4rem);
     height: calc(100% - 4rem);
+  }
+
+  .tutorial-modal {
+    inset: 50% auto auto 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    position: absolute;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+  }
+
+  html[data-theme="dark"] .tutorial-modal {
+    border: 1px solid #23232a;
+    background-color: #0f0f14;
+  }
+
+  .tutorial-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .tutorial-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-end-tutorial {
+    width: 120px;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    background: var(--color-primary);
+    border-radius: 5px;
   }

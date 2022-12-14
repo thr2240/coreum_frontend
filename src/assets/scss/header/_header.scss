@@ -708,3 +708,49 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 100%;
     backdrop-filter: blur(9px);
 }
+
+.icon-setting {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-body);
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+html[data-theme="light"] .icon-setting {
+    border-color: var(--color-border-white);
+}
+
+.setting-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    gap: 15px;
+}
+
+.setting-tutorial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    gap: 10px;
+}
+
+.select-lang {
+    padding: 8px;
+    width: 100px;
+    text-transform: uppercase;
+}
+
+html[data-theme="dark"] option {
+    background: var(--background-color-2);
+}

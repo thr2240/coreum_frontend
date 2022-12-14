@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { BiCategory } from "react-icons/bi";
 
 const CategoryFilter = ({ categories, onChange }) => {
     const [isCheck, setIsCheck] = useState([]);
@@ -18,7 +19,9 @@ const CategoryFilter = ({ categories, onChange }) => {
     return (
         <div className="nuron-expo-filter-widget widget-category mb--30">
             <div className="inner">
-                <h5 className="widget-title">Categories</h5>
+                <h5 className="widget-title">
+                    <BiCategory /> Categories
+                </h5>
                 <div className="content">
                     {Object.entries(categories).map(([key, value]) => (
                         <div className="nuron-form-check" key={key}>

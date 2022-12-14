@@ -3,7 +3,6 @@ import { Scrollbars } from "react-custom-scrollbars";
 import ContactWidget from "./contact";
 import SortWidget from "./sort";
 import CategoryFilter from "./category-filter";
-import LevelFilter from "./level-filter";
 import PriceSort from "./price-sort";
 import PriceRangeFilter from "./price-range-filter";
 
@@ -22,9 +21,8 @@ const ProductFilter = ({
         }>
         <div className="nu-course-sidebar">
             <ContactWidget />
-            <SortWidget onChange={sortHandler} value={sort} />
             <CategoryFilter categories={categories} onChange={filterHandler} />
-            <LevelFilter onChange={filterHandler} levels={levels} />
+            <SortWidget onChange={sortHandler} value={sort} />
             <PriceSort onChange={sortHandler} value={sort} />
             <PriceRangeFilter values={inputs.price} onChange={priceHandler} />
         </div>
