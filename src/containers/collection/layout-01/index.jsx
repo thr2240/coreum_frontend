@@ -26,11 +26,11 @@ const SortableList = SortableContainer(({ gridcolumns, effect, collections }) =>
     );
 });
 
-const SortableExplorer = ({ gridcolumns, effect, collections }) => {
+const CollectSortableExplorer = ({ gridcolumns, effect, collections }) => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        if (collections.length > 0) {
+        if (collections && collections.length > 0) {
             setItems(collections);
         }
     }, [collections]);
@@ -52,4 +52,4 @@ const SortableExplorer = ({ gridcolumns, effect, collections }) => {
     );
 };
 
-export default SortableExplorer;
+export default CollectSortableExplorer;
