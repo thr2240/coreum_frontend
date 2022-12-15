@@ -286,7 +286,7 @@
     border: 1px solid var(--color-border);
 
     &.nu-show-sidebar {
-        width: 220px;
+        width: 255px;
         transition: width 0.4s linear;
     }
 
@@ -294,29 +294,11 @@
         width: 80px;
         transition: width 0.4s linear;
     }
-
-    @media only screen and (max-width: 991px) {
-        width: 100%;
-
-        .nu-course-sidebar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-    }
-
-    @media only screen and (max-width: 639px) {
-        .nu-course-sidebar {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-    }
 }
 
 .nu-course-sidebar {
     position: relative;
-    padding: 20px 30px 30px;
+    padding: 20px;
 
     .widget-title,
     .nuron-form-contact-widget {

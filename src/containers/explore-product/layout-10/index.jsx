@@ -435,7 +435,7 @@ const ExploreProductArea = ({
               <div className="walk_thru_container">
                 <iframe
                   title="Walk Through"
-                  src={'http://192.168.103.57:9966'}
+                  src={'http://95.216.85.81:9966'}
                   className="walk_thru"
                 ></iframe>
                 <div className="walk_close" onClick={handleClose}>

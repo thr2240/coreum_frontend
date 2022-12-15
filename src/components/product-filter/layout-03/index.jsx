@@ -24,7 +24,7 @@ const ProductFilter = ({
     }
     return (
         <div id="author-filter" className={clsx("author-filter", isShow ? 'nu-show-sidebar' : 'nu-hide-sidebar')}>
-            <Scrollbar className="filter_scrollbar" autoHide>
+            <Scrollbar className="filter_scrollbar" autoHide noScrollX={true}>
                 <div className="nu-course-sidebar">
                     <div className={clsx("nu-btn-sidebar")} onClick={handleSidebar}>
                         {isShow ? (

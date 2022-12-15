@@ -481,10 +481,6 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    @media only screen and (max-width: 991px) {
-        flex-direction: column;
-        gap: 20px;
-    }
 }
 
 .author-container {
