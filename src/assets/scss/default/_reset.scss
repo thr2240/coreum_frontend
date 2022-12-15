@@ -145,8 +145,8 @@ nav ol {
     list-style-image: none;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
     margin: 0;
 }
 
@@ -160,7 +160,7 @@ img {
     -ms-interpolation-mode: bicubic;
     border: 0;
     vertical-align: middle;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 
@@ -231,6 +231,7 @@ input[type="search"] {
     appearance: textfield;
     padding-right: 2px;
     width: 270px;
+
     @media #{$laptop-device} {
         width: 250px;
     }

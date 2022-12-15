@@ -16,7 +16,7 @@ const AuthorIntroArea = ({ className, space, data }) => {
                 show={isShareModalOpen}
                 handleModal={shareModalHandler}
             />
-            <div className="rn-author-bg-area position-relative ptb--100 mb--10">
+            <div className="rn-author-bg-area position-relative ptb--75 mb--10">
                 <Image
                     src="/images/banner/banner.png"
                     alt="Slider BG"
