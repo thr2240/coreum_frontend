@@ -5,14 +5,16 @@ import Collection from "@components/collection";
 const SortableItem = (({ collection, effect }) => {
     return (
         <div className="grid-item">
-            <Collection
-                title={collection.title}
-                total_item={collection.total_item}
-                path={collection.slug}
-                image={collection.image}
-                thumbnails={collection.thumbnails}
-                profile_image={collection.profile_image}
-            />
+            <div className="product-card">
+                <Collection
+                    title={collection.title}
+                    total_item={collection.total_item}
+                    path={collection.slug}
+                    image={collection.image}
+                    thumbnails={collection.thumbnails}
+                    profile_image={collection.profile_image}
+                />
+            </div>
         </div >
     );
 });

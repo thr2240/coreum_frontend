@@ -386,7 +386,7 @@
         border-radius: 6px;
         justify-content: center;
         button {
-            width: 150px;
+            width: 120px;
             height: 38px;
             border: none;
             color: var(--color-white);
@@ -405,7 +405,7 @@
                 border: transparent;
             }
             @media #{$laptop-device} {
-                width: 130px;
+                width: 110px;
             }
         }
     }

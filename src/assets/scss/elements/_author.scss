@@ -419,7 +419,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
     padding: 0;
 
     &.grid-2-container {
@@ -455,6 +455,14 @@
     height: fit-content;
     user-select: none;
     cursor: all-scroll;
+}
+
+.product-card {
+    position: relative;
+    max-width: 300px;
+    max-height: 370px;
+    min-width: 229px;
+    margin: auto;
 }
 
 .sortableHelperClass {

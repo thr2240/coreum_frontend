@@ -12,12 +12,14 @@ import ClientAvatar from "@ui/client-avatar";
 import Button from "@ui/button";
 import { ImageType } from "@utils/types";
 import PlaceBidModal from "@components/modals/placebid-modal";
+import MessageBox from "@components/product-filter/layout-03/message-box";
 import Comment from "./comment";
 import TileEffect from "./tileeffect";
 
 const NFT_EFFECT = {
-    CARD_FLIP: 0,
-    SPHERE_VIEW: 1
+    NO_EFFECT: 0,
+    CARD_FLIP: 1,
+    SPHERE_VIEW: 2
 }
 
 const Product = ({
@@ -40,6 +42,7 @@ const Product = ({
     const [favorite, setFavorite] = useState(false);
     const [comment, setComment] = useState(false);
     const [isFlipped, setFlipped] = useState(false);
+    const [messageBox, setMessageBox] = useState(false);
 
     const handleBidModal = () => {
         setShowBidModal((prev) => !prev);
@@ -56,8 +59,7 @@ const Product = ({
 
     useEffect(() => {
         if (effect === NFT_EFFECT.SPHERE_VIEW) {
-            const tile = myRef.current; //document.querySelector('.product-tile-effect');
-            console.log('>>>>', tile.offsetWidth, tile.offsetHeight)
+            const tile = myRef.current;
             const wrap = new TileEffect(({
                 element: tile,
                 tiltEffect: "reverse"
@@ -66,7 +68,7 @@ const Product = ({
     }, [effect]);
 
     return (
-        <div className="position-relative">
+        <div className="product-card">
             {effect === NFT_EFFECT.CARD_FLIP && (
                 <Anchor path={`/product/${slug}`}>
                     <div className={clsx("card-flip-board", isFlipped && "card-flip-back-board")}
@@ -115,7 +117,7 @@ const Product = ({
                                         <span className="badge">{Math.floor(Math.random() * 100) + 1}</span>
                                     </div>
                                 </div>
-                                <div className="profile-share-item">
+                                <div className="profile-share-item" onClick={(e) => setMessageBox(true)}>
                                     <TbBrandTelegram size="25px" />
                                 </div>
                             </div>
@@ -196,7 +198,7 @@ const Product = ({
                                     <span className="badge">{Math.floor(Math.random() * 100) + 1}</span>
                                 </div>
                             </div>
-                            <div className="profile-share-item">
+                            <div className="profile-share-item" onClick={(e) => setMessageBox(true)}>
                                 <TbBrandTelegram size="25px" />
                             </div>
                         </div>
@@ -205,6 +207,11 @@ const Product = ({
                 </div>
             )}
             <PlaceBidModal show={showBidModal} handleModal={handleBidModal} />
+            {
+                messageBox && (
+                    <MessageBox show={messageBox} onClose={() => setMessageBox(false)} />
+                )
+            }
         </div>
     );
 };
