@@ -1,7 +1,7 @@
 import { useReducer, useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbar } from "react-scrollbars-custom";
 import TabContent from "react-bootstrap/TabContent";
 import TabContainer from "react-bootstrap/TabContainer";
 import TabPane from "react-bootstrap/TabPane";
@@ -386,22 +386,17 @@ const ExploreProductArea = ({
                     </Sticky>
                   </div>
                   <div className="author-explorer">
-                    <div className="author-filter">
-                      <ProductFilter
-                        sortHandler={sortHandler}
-                        inputs={state.inputs}
-                        sort={state.sort}
-                        categories={categories}
-                        levels={levels}
-                        filterHandler={filterHandler}
-                        priceHandler={priceHandler}
-                      />
-                    </div>
+                    <ProductFilter
+                      sortHandler={sortHandler}
+                      inputs={state.inputs}
+                      sort={state.sort}
+                      categories={categories}
+                      levels={levels}
+                      filterHandler={filterHandler}
+                      priceHandler={priceHandler}
+                    />
                     <div className="author-container">
-                      <Scrollbars autoHide style={{ height: "100vh", overflowX: 'hidden' }}
-                        renderThumbVertical={({ style, ...props }) =>
-                          <div {...props} className={'thumb-horizontal'} />
-                        }>
+                      <Scrollbar autoHide style={{ height: "100vh" }}>
                         <TabContent className="tab-content rn-bid-content">
                           <TabPane className="row d-flex g-5 w-100 ml--0 mr--0" eventKey="nav-auction">
                             <SortableExplorer gridcolumns={gridcolumns} effect={effect} products={onSaleProducts} />
@@ -429,7 +424,7 @@ const ExploreProductArea = ({
                           <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-comingsoon">
                           </TabPane>
                         </TabContent>
-                      </Scrollbars>
+                      </Scrollbar>
                     </div>
                   </div>
                 </div>

@@ -1150,7 +1150,7 @@
             "currency": "wETH"
         },
         "likeCount": 205,
-        "categories": ["collectionable", "art"],
+        "categories": ["collections", "art"],
         "images": [
             {
                 "src": "/images/portfolio/lg/11.jpg"
@@ -2004,7 +2004,7 @@
             "currency": "wETH"
         },
         "likeCount": 420,
-        "categories": ["collectionable", "video"],
+        "categories": ["collections", "video"],
         "images": [
             {
                 "src": "/images/portfolio/lg/7.jpg"
@@ -2572,7 +2572,7 @@
             "currency": "wETH"
         },
         "likeCount": 205,
-        "categories": ["collectionable"],
+        "categories": ["collections"],
         "images": [
             {
                 "src": "/images/portfolio/lg/5.jpg"

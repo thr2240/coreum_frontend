@@ -1162,7 +1162,7 @@
             "currency": "wCORE"
         },
         "likeCount": 205,
-        "categories": ["collectionable", "art"],
+        "categories": ["collections", "art"],
         "images": [
             {
                 "src": "/images/portfolio/lg/11.jpg"
@@ -2025,7 +2025,7 @@
             "currency": "wCORE"
         },
         "likeCount": 420,
-        "categories": ["collectionable", "video"],
+        "categories": ["collections", "video"],
         "images": [
             {
                 "src": "/images/portfolio/lg/7.jpg"
@@ -2599,7 +2599,7 @@
             "currency": "wCORE"
         },
         "likeCount": 205,
-        "categories": ["highest", "collectionable"],
+        "categories": ["highest", "collections"],
         "images": [
             {
                 "src": "/images/portfolio/lg/5.jpg"
@@ -3747,7 +3747,7 @@
             "currency": "wCORE"
         },
         "likeCount": 542,
-        "categories": ["collectionable", "music"],
+        "categories": ["collections", "music"],
         "images": [
             {
                 "src": "/images/portfolio/lg/9.jpg"

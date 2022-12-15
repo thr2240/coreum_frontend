@@ -71,10 +71,10 @@ function slideToggle(element, duration = 500) {
 const flatDeep = (arr, d = 1) =>
     d > 0
         ? arr.reduce(
-              (acc, val) =>
-                  acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val),
-              []
-          )
+            (acc, val) =>
+                acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val),
+            []
+        )
         : arr.slice();
 
 function slugify(text) {
@@ -163,6 +163,10 @@ const isEmpty = (obj) => {
     return true;
 };
 
+const getExtension = (filename) => {
+    return filename.split('.').pop()
+}
+
 module.exports = {
     slideUp,
     slideDown,
@@ -175,4 +179,5 @@ module.exports = {
     shuffleArray,
     hasKey,
     isEmpty,
+    getExtension
 };

@@ -487,30 +487,8 @@
     }
 }
 
-.author-filter {
-    width: 220px;
-    @media only screen and (max-width: 991px) {
-        width: 100%;
-        .nu-course-sidebar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-    }
-    @media only screen and (max-width: 639px) {
-        .nu-course-sidebar {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-    }
-}
-
 .author-container {
-    width: calc(100% - 220px);
-    @media only screen and (max-width: 991px) {
-        width: 100%;
-    }
+    width: 100%;
 }
 
 .product-tile-effect {

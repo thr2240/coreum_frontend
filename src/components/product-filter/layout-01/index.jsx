@@ -27,7 +27,7 @@ const ProductFilter = forwardRef(
                             { value: "art", text: "Art" },
                             { value: "music", text: "Music" },
                             { value: "video", text: "Video" },
-                            { value: "Collectionable", text: "Collectionable" },
+                            { value: "collections", text: "collections" },
                         ]}
                         placeholder="Category"
                         onChange={slectHandler}

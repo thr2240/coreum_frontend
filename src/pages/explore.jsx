@@ -3,7 +3,7 @@ import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-01";
 import Footer from "@layout/footer/footer-01";
 import Breadcrumb from "@components/breadcrumb";
-import ExploreProductArea from "@containers/explore-product/layout-01";
+import ExploreProductArea from "@containers/explore-product/layout-08";
 
 // Demo data
 import productData from "../data/products.json";

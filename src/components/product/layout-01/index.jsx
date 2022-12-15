@@ -11,6 +11,7 @@ import ProductBid from "@components/product-bid";
 import ClientAvatar from "@ui/client-avatar";
 import Button from "@ui/button";
 import { ImageType } from "@utils/types";
+import { getExtension } from "@utils/methods";
 import PlaceBidModal from "@components/modals/placebid-modal";
 import MessageBox from "@components/product-filter/layout-03/message-box";
 import Comment from "./comment";
@@ -69,7 +70,7 @@ const Product = ({
 
     return (
         <div className="product-card">
-            {effect === NFT_EFFECT.CARD_FLIP && (
+            {(effect === NFT_EFFECT.CARD_FLIP && !comment) && (
                 <Anchor path={`/product/${slug}`}>
                     <div className={clsx("card-flip-board", isFlipped && "card-flip-back-board")}
                         onMouseOver={() => setFlipped(true)}

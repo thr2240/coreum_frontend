@@ -1,28 +1,50 @@
 import { useState } from "react";
+import clsx from "clsx";
 import { RiContactsFill } from "react-icons/ri";
 import MessageBox from "./message-box";
 
-const ContactWidget = () => {
+const ContactWidget = ({ show }) => {
     const [messageBox, setMessageBox] = useState(false);
 
     return (
         <div className="nuron-expo-filter-widget widget-shortby mb--30">
             <div className="inner">
-                <h5 className="widget-title">
-                    <RiContactsFill /> Contact
+                <h5 className="widget-title tooltip-ex">
+                    <span>
+                        <RiContactsFill />
+                    </span>
+                    <span className={clsx("ml--5", show ? "widget-show" : "widget-hide")}>Contact</span>
+                    {!show && (
+                        <span className="tooltiptext">Contact</span>
+                    )}
                 </h5>
-                <div className="content">
-                    <div className="nuron-form-contact-widget">
+                <div className="content contact-widget">
+                    <div className="nuron-form-contact-widget tooltip-ex" onClick={() => setMessageBox(true)}>
                         <i className="feather-mail" />
-                        <span className="contact_info" onClick={() => setMessageBox(true)}>Send Message</span>
+                        <span className={clsx("contact_info", show ? "widget-show" : "widget-hide")}>
+                            Send Message
+                        </span>
+                        {!show && (
+                            <span className="tooltiptext">Send Message</span>
+                        )}
                     </div>
-                    <div className="nuron-form-contact-widget">
+                    <div className="nuron-form-contact-widget tooltip-ex">
                         <i className="feather-user-plus" />
-                        <span className="contact_info">Add Friend</span>
+                        <span className={clsx("contact_info", show ? "widget-show" : "widget-hide")}>
+                            Add Friend
+                        </span>
+                        {!show && (
+                            <span className="tooltiptext">Add Friend</span>
+                        )}
                     </div>
-                    <div className="nuron-form-contact-widget">
+                    <div className="nuron-form-contact-widget tooltip-ex">
                         <i className="feather-user-check" />
-                        <span className="contact_info">Rank User</span>
+                        <span className={clsx("contact_info", show ? "widget-show" : "widget-hide")}>
+                            Rank User
+                        </span>
+                        {!show && (
+                            <span className="tooltiptext">Rank User</span>
+                        )}
                     </div>
                 </div>
             </div>

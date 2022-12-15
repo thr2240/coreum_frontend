@@ -376,6 +376,7 @@
             z-index: 2;
         }
     }
+
     .product_temp_number {
         position: absolute;
         top: 30px;
@@ -1170,22 +1171,22 @@
 }
 
 .nuron-expo-filter-widget {
-    background: var(--background-color-1);
-    padding: 20px 30px 30px;
-    border-radius: 5px;
-    border: 1px solid var(--color-border);
+    // background: var(--background-color-1);
+    // padding: 20px 30px 30px;
+    // border-radius: 5px;
+    // border: 1px solid var(--color-border);
 
-    @media #{$lg-layout} {
-        padding: 20px 15px;
-    }
+    // @media #{$lg-layout} {
+    //     padding: 20px 15px;
+    // }
 
-    @media #{$md-layout} {
-        padding: 20px 15px;
-    }
+    // @media #{$md-layout} {
+    //     padding: 20px 15px;
+    // }
 
-    @media #{$sm-layout} {
-        padding: 20px 15px;
-    }
+    // @media #{$sm-layout} {
+    //     padding: 20px 15px;
+    // }
 
     .widget-title {
         border-bottom: 1px solid var(--color-border);
@@ -1260,6 +1261,7 @@
     width: 100%;
     aspect-ratio: 1;
     z-index: 98;
+
     &.card-flip-back-board {
         aspect-ratio: auto;
         height: 100%;

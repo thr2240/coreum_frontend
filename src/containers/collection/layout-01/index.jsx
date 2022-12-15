@@ -44,11 +44,6 @@ const CollectSortableExplorer = ({ gridcolumns, effect, collections }) => {
         }
     }, [collections]);
 
-    // onSortEndHandler
-    const onSortEndHandler = ({ oldIndex, newIndex }) => {
-        setItems((prev) => arrayMove(prev, oldIndex, newIndex));
-    };
-
     return (
         <SortableList
             effect={effect}
