@@ -320,11 +320,11 @@
     .more_options_list {
         opacity: 0;
         visibility: hidden;
-        width: calc(100% + 12px);
+        width: calc(100% + 30px);
         height: auto;
         position: absolute;
         top: 44px;
-        left: -6px;
+        left: -15px;
         z-index: 90;
         transition: 0.3s;
         border-radius: 0 0 10px 10px;

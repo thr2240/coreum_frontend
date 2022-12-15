@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SortableContainer, SortableElement, arrayMove } from "react-sortable-hoc";
+import { ReactSortable } from "react-sortablejs";
 import Product from "@components/product/layout-01";
 import { useEffect } from "react";
 
@@ -24,13 +24,20 @@ const SortableItem = (({ item, effect }) => {
     </div >
   );
 });
-const SortableList = SortableContainer(({ gridcolumns, effect, items }) => {
+const SortableList = (({ gridcolumns, effect, items, setItems }) => {
   return (
-    <div className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container" }>
+    <ReactSortable 
+      className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container" } 
+      list={items} 
+      setList={setItems}
+      delayOnTouchOnly={true}
+      animation={200}
+      delay={2}
+    >
       {items.map((item, index) => (
         <SortableItem key={item.id} index={index} item={item} effect={effect} />
       ))}
-    </div>
+    </ReactSortable>
   );
 });
 
@@ -43,19 +50,12 @@ const SortableExplorer = ({ gridcolumns, effect, products }) => {
     }
   }, [products]);
 
-  // onSortEndHandler
-  const onSortEndHandler = ({ oldIndex, newIndex }) => {
-    setItems((prev) => arrayMove(prev, oldIndex, newIndex));
-  };
-
   return (
     <SortableList
       effect={effect}
       gridcolumns={gridcolumns}
       items={items}
-      onSortEnd={onSortEndHandler}
-      axis="xy"
-      helperClass="sortableHelperClass"
+      setItems={setItems}      
     />
   );
 };

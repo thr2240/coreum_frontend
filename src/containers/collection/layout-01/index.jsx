@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SortableContainer, SortableElement, arrayMove } from "react-sortable-hoc";
+import { ReactSortable } from "react-sortablejs";
 import Collection from "@components/collection";
 
 const SortableItem = (({ collection, effect }) => {
@@ -18,13 +18,20 @@ const SortableItem = (({ collection, effect }) => {
         </div >
     );
 });
-const SortableList = SortableContainer(({ gridcolumns, effect, collections }) => {
+const SortableList = (({ gridcolumns, effect, collections, setItems }) => {
     return (
-        <div className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container"}>
+        <ReactSortable
+            className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container"}
+            list={collections}
+            setList={setItems}
+            delayOnTouchOnly={true}
+            animation={200}
+            delay={2}
+        >
             {collections.map((collection, index) => (
                 <SortableItem key={collection.id} index={index} collection={collection} effect={effect} />
             ))}
-        </div>
+        </ReactSortable>
     );
 });
 
@@ -47,9 +54,7 @@ const CollectSortableExplorer = ({ gridcolumns, effect, collections }) => {
             effect={effect}
             gridcolumns={gridcolumns}
             collections={items}
-            onSortEnd={onSortEndHandler}
-            axis="xy"
-            helperClass="sortableHelperClass"
+            setItems={setItems}
         />
     );
 };
