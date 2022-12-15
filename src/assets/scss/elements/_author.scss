@@ -289,7 +289,6 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    border: 2px solid black;
     margin: auto 0;
     border-radius: 50%;
     width: 144px;
@@ -564,4 +563,45 @@
     font-size: 16px;
     background: var(--color-primary);
     border-radius: 5px;
+  }
+
+  .rn-author-bg-area {
+    position: relative;
+    height: 180px;
+    margin-bottom: 10px;
+  }
+
+  .author-show-banner {
+    height: 180px;
+    transition: height 0.3s ease-in;
+  }
+
+  .author-hide-banner, .thumbnail-hide-banner {
+    height: 0px;
+    transition: height 0.3s ease-in;
+  }
+
+  .thumbnail-show-banner {
+    height: 144px;
+    transition: height 0.3s ease-in;
+  }
+
+  .btn-chevron {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 999;
+    color: #171721;
+    border: none;
+    width: 100px;
+  }
+
+  .author-bg-up {
+    bottom: 0;
+  }
+
+  .author-bg-down {
+    bottom: -20px;
+    color: white;
   }

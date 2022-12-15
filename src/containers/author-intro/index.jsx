@@ -5,28 +5,49 @@ import Image from "next/image";
 import { ImageType } from "@utils/types";
 import ShareDropdown from "@components/share-dropdown";
 import ShareModal from "@components/modals/share-modal";
+import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 import Anchor from "@ui/anchor";
 
 const AuthorIntroArea = ({ className, space, data }) => {
     const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+    const [isBanner, setIsBanner] = useState(true);
     const shareModalHandler = () => setIsShareModalOpen((prev) => !prev);
+    const handleBanner = (e) => {
+        setIsBanner(false);
+    }
     return (
         <>
             <ShareModal
                 show={isShareModalOpen}
                 handleModal={shareModalHandler}
             />
-            <div className="rn-author-bg-area position-relative ptb--75 mb--10">
-                <Image
-                    src="/images/banner/banner.png"
-                    alt="Slider BG"
-                    layout="fill"
-                    objectFit="cover"
-                    quality={100}
-                    priority
-                />
+            <div 
+                className={clsx("rn-author-bg-area", isBanner ? "author-show-banner" : "author-hide-banner")}
+                onMouseLeave={handleBanner}
+            >
+                {
+                    isBanner ? (
+                        <button className="btn-chevron author-bg-up animated rubberBand duration-2 infinite" onClick={() => setIsBanner(false)}>
+                            <SlArrowUp size={22} />
+                        </button>
+                    ) : (
+                        <button className="btn-chevron author-bg-down animated rubberBand duration-2 infinite" onClick={() => setIsBanner(true)}>
+                            <SlArrowDown size={22} />
+                        </button>
+                    )
+                }
+                <div className={clsx("author-bg-area")}>
+                    <Image
+                        src="/images/banner/banner.png"
+                        alt="Slider BG"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        priority
+                    />
+                </div>
                 <div className="container">
-                    <div className="user-thumbnail">
+                    <div className={clsx("user-thumbnail", isBanner ? "thumbnail-show-banner" : "thumbnail-hide-banner")}>
                         <Image
                             // src={
                             //     data?.image?.src
@@ -35,9 +56,9 @@ const AuthorIntroArea = ({ className, space, data }) => {
                             // }
                             src="/images/profile/avatar.jpg"
                             alt={data.image?.alt || data.name}
-                            width={140}
-                            height={140}
-                            layout="fixed"
+                            width="100%"
+                            height="100%"
+                            layout="fill"
                         />
                     </div>
                 </div>
