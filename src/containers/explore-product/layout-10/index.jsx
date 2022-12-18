@@ -33,7 +33,7 @@ const GRID_COLUMN = {
 const NFT_EFFECT = {
   NO_EFFECT: 0,
   CARD_FLIP: 1,
-  SPHERE_VIEW: 2
+  WRAP_VIEW: 2
 }
 
 function reducer(state, action) {
@@ -365,9 +365,9 @@ const ExploreProductArea = ({
                                             {effect === NFT_EFFECT.CARD_FLIP && <FiCheck />}
                                             <span>Card Flip</span>
                                           </li>
-                                          <li onClick={() => handleEffect(NFT_EFFECT.SPHERE_VIEW)}>
-                                            {effect === NFT_EFFECT.SPHERE_VIEW && <FiCheck />}
-                                            <span>Sphere View</span>
+                                          <li onClick={() => handleEffect(NFT_EFFECT.WRAP_VIEW)}>
+                                            {effect === NFT_EFFECT.WRAP_VIEW && <FiCheck />}
+                                            <span>Wrap View</span>
                                           </li>
                                           <hr className="mt--5 mb--5 mr--10 ml--10" />
                                           <li onClick={handleWalk}>

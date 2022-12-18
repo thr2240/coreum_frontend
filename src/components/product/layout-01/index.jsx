@@ -20,7 +20,7 @@ import TileEffect from "./tileeffect";
 const NFT_EFFECT = {
     NO_EFFECT: 0,
     CARD_FLIP: 1,
-    SPHERE_VIEW: 2
+    WRAP_VIEW: 2
 }
 
 const Product = ({
@@ -59,7 +59,7 @@ const Product = ({
     const myRef = useRef()
 
     useEffect(() => {
-        if (effect === NFT_EFFECT.SPHERE_VIEW) {
+        if (effect === NFT_EFFECT.WRAP_VIEW) {
             const tile = myRef.current;
             const wrap = new TileEffect(({
                 element: tile,

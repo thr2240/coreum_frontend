@@ -7,7 +7,7 @@
         "latestBid": "6/30",
         "price": {
             "amount": 0.244,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 322,
         "categories": ["music", "video"],
@@ -72,7 +72,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -84,7 +84,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -96,7 +96,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -108,7 +108,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -120,7 +120,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -132,7 +132,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -220,7 +220,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -232,7 +232,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -244,7 +244,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -256,7 +256,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -268,12 +268,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -295,7 +295,7 @@
         "latestBid": "1/20",
         "price": {
             "amount": 0.244,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 322,
         "categories": ["art", "video"],
@@ -360,7 +360,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -372,7 +372,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -384,7 +384,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -396,7 +396,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -408,7 +408,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -420,7 +420,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -508,7 +508,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -520,7 +520,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -532,7 +532,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -544,7 +544,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -556,12 +556,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -583,7 +583,7 @@
         "latestBid": "2/31",
         "price": {
             "amount": 0.218,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 12,
         "categories": ["music", "lowest"],
@@ -648,7 +648,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -660,7 +660,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -672,7 +672,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -684,7 +684,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -696,7 +696,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -708,7 +708,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -796,7 +796,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -808,7 +808,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -820,7 +820,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -832,7 +832,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -844,12 +844,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -871,7 +871,7 @@
         "latestBid": "3/16",
         "price": {
             "amount": 0.265,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 20,
         "categories": ["video", "highest"],
@@ -936,7 +936,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -948,7 +948,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -960,7 +960,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -972,7 +972,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -984,7 +984,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -996,7 +996,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -1084,7 +1084,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1096,7 +1096,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1108,7 +1108,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1120,7 +1120,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1132,12 +1132,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -1159,7 +1159,7 @@
         "latestBid": "6/50",
         "price": {
             "amount": 0.285,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 205,
         "categories": ["collections", "art"],
@@ -1224,7 +1224,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1236,7 +1236,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1248,7 +1248,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1260,7 +1260,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1272,7 +1272,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -1284,7 +1284,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -1372,7 +1372,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1384,7 +1384,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1396,7 +1396,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1408,7 +1408,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1420,12 +1420,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -1447,7 +1447,7 @@
         "latestBid": "6/30",
         "price": {
             "amount": 0.334,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 205,
         "categories": ["highest", "music"],
@@ -1512,7 +1512,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1524,7 +1524,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1536,7 +1536,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1548,7 +1548,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1560,7 +1560,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -1572,7 +1572,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -1660,7 +1660,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1672,7 +1672,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1684,7 +1684,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1696,7 +1696,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1708,12 +1708,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -1735,7 +1735,7 @@
         "latestBid": "1/20",
         "price": {
             "amount": 0.453,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 322,
         "categories": ["lowest", "art"],
@@ -1799,7 +1799,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1811,7 +1811,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1823,7 +1823,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1835,7 +1835,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1847,7 +1847,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -1859,7 +1859,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -1947,7 +1947,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -1959,7 +1959,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -1971,7 +1971,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -1983,7 +1983,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -1995,12 +1995,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -2022,7 +2022,7 @@
         "latestBid": "5/11",
         "price": {
             "amount": 0.892,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 420,
         "categories": ["collections", "video"],
@@ -2086,7 +2086,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2098,7 +2098,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2110,7 +2110,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2122,7 +2122,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2134,7 +2134,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -2146,7 +2146,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -2234,7 +2234,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2246,7 +2246,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2258,7 +2258,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2270,7 +2270,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2282,12 +2282,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -2309,7 +2309,7 @@
         "latestBid": "3/16",
         "price": {
             "amount": 0.756,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 20,
         "categories": ["music", "video"],
@@ -2373,7 +2373,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2385,7 +2385,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2397,7 +2397,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2409,7 +2409,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2421,7 +2421,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -2433,7 +2433,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -2521,7 +2521,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2533,7 +2533,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2545,7 +2545,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2557,7 +2557,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2569,12 +2569,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -2596,7 +2596,7 @@
         "latestBid": "6/50",
         "price": {
             "amount": 0.566,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 205,
         "categories": ["highest", "collections"],
@@ -2660,7 +2660,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2672,7 +2672,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2684,7 +2684,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2696,7 +2696,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2708,7 +2708,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -2720,7 +2720,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -2808,7 +2808,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2820,7 +2820,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2832,7 +2832,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2844,7 +2844,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2856,12 +2856,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -2883,7 +2883,7 @@
         "latestBid": "1/1",
         "price": {
             "amount": 0.9,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 502,
         "categories": ["lowest", "art"],
@@ -2947,7 +2947,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -2959,7 +2959,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -2971,7 +2971,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -2983,7 +2983,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -2995,7 +2995,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -3007,7 +3007,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -3095,7 +3095,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3107,7 +3107,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3119,7 +3119,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3131,7 +3131,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -3143,12 +3143,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -3170,7 +3170,7 @@
         "latestBid": "1/1",
         "price": {
             "amount": 0.544,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 308,
         "categories": ["music", "video"],
@@ -3234,7 +3234,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3246,7 +3246,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3258,7 +3258,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3270,7 +3270,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -3282,7 +3282,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -3294,7 +3294,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -3382,7 +3382,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3394,7 +3394,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3406,7 +3406,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3418,7 +3418,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -3430,12 +3430,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -3457,7 +3457,7 @@
         "latestBid": "1/5",
         "price": {
             "amount": 0.668,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 500,
         "categories": ["music", "highest"],
@@ -3521,7 +3521,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3533,7 +3533,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3545,7 +3545,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3557,7 +3557,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -3569,7 +3569,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -3581,7 +3581,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -3669,7 +3669,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3681,7 +3681,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3693,7 +3693,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3705,7 +3705,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -3717,12 +3717,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -3744,7 +3744,7 @@
         "latestBid": "3/5",
         "price": {
             "amount": 0.423,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 542,
         "categories": ["collections", "music"],
@@ -3808,7 +3808,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3820,7 +3820,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3832,7 +3832,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3844,7 +3844,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -3856,7 +3856,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -3868,7 +3868,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -3956,7 +3956,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -3968,7 +3968,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -3980,7 +3980,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -3992,7 +3992,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -4004,12 +4004,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
@@ -4031,7 +4031,7 @@
         "latestBid": "3/10",
         "price": {
             "amount": 0.321,
-            "currency": "wCORE"
+            "currency": "CORE"
         },
         "likeCount": 345,
         "categories": ["art", "video"],
@@ -4095,7 +4095,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -4107,7 +4107,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -4119,7 +4119,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -4131,7 +4131,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -4143,7 +4143,7 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             },
             {
@@ -4155,7 +4155,7 @@
                         "src": "/images/client/client-8.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2.5 hours ago"
             }
         ],
@@ -4243,7 +4243,7 @@
                         "src": "/images/client/client-3.png"
                     }
                 },
-                "amount": "0.234wCORE",
+                "amount": "0.234CORE",
                 "bidAt": "1 hours ago"
             },
             {
@@ -4255,7 +4255,7 @@
                         "src": "/images/client/client-4.png"
                     }
                 },
-                "amount": "0.09wCORE",
+                "amount": "0.09CORE",
                 "bidAt": "1.30 hours ago"
             },
             {
@@ -4267,7 +4267,7 @@
                         "src": "/images/client/client-5.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.35 hours ago"
             },
             {
@@ -4279,7 +4279,7 @@
                         "src": "/images/client/client-6.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "1.55 hours ago"
             },
             {
@@ -4291,12 +4291,12 @@
                         "src": "/images/client/client-7.png"
                     }
                 },
-                "amount": "0.07wCORE",
+                "amount": "0.07CORE",
                 "bidAt": "2 hours ago"
             }
         ],
         "highest_bid": {
-            "amount": "0.234wCORE",
+            "amount": "0.234CORE",
             "bidder": {
                 "name": "Brodband",
                 "slug": "/author",
