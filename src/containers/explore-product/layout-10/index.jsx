@@ -6,7 +6,6 @@ import Nav from "react-bootstrap/Nav";
 import { StickyContainer, Sticky } from 'react-sticky';
 import { SlClose } from 'react-icons/sl';
 import { FiCheck } from 'react-icons/fi';
-import InputRange from "react-input-range";
 import SectionTitle from "@components/section-title/layout-02";
 import ProductFilter from "@components/product-filter/layout-03";
 import Product from "@components/product/layout-01";
