@@ -36,7 +36,7 @@ const HeroArea = ({ data }) => (
                                     className="more-author-text"
                                     path="/collection"
                                 >
-                                    {data.bitCount}+ Place Bit.
+                                    {data.bitCount}+ Bit.
                                 </Anchor>
                             </div>
                         </div>

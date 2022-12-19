@@ -13,7 +13,7 @@ const valuetext = (value) => {
 }
 
 const Container = ({ tap, effect, products }) => {
-    const [view, setView] = useState(20);
+    const [view, setView] = useState(4);
     const handleChange = (newValue) => {
         setView(newValue);
     }
@@ -24,9 +24,9 @@ const Container = ({ tap, effect, products }) => {
                     aria-label="View"
                     getAriaValueText={valuetext}
                     step={1}
-                    defaultValue={20}
-                    min={1}
-                    max={100}
+                    defaultValue={4}
+                    min={3}
+                    max={6}
                     onChange={handleChange}
                 />
             </div>

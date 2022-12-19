@@ -57,7 +57,7 @@ const Product = ({
                                         className="more-author-text"
                                         path={`/product/${slug}`}
                                     >
-                                        {bitCount}+ Place Bit.
+                                        {bitCount}+ Bit.
                                     </Anchor>
                                 </div>
                                 <div className="last-bid">

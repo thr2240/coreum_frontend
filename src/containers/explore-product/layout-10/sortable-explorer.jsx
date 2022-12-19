@@ -1,10 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
 import Product from "@components/product/layout-01";
-
-const MIN_WIDTH = 15;
-const MAX_WIDTH = 30;
-const STEP_WIDTH = 0.15;
 
 const SortableItem = (({ item, effect }) => {
   return (
@@ -27,18 +23,18 @@ const SortableItem = (({ item, effect }) => {
     </div >
   );
 });
-const SortableList = (({ gridcolumns, effect, view, items, setItems }) => {
-  const rate = MAX_WIDTH - view * STEP_WIDTH;
+const SortableList = (({ effect, view, items, setItems }) => {
+  useEffect(() => {
+    document.querySelector('.grid-container').style.setProperty('--grid-column-count', parseInt(view));
+  }, [view])
   return (
     <ReactSortable 
-      // className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container" } 
       className="grid-container"
       list={items} 
       setList={setItems}
       delayOnTouchOnly={true}
       animation={200}
       delay={2}
-      style={{ gridTemplateColumns: `repeat(auto-fit, minmax(${rate}%, 1fr))`}}
     >
       {items.map((item, index) => (
         <SortableItem key={item.id} index={index} item={item} effect={effect} />
@@ -47,7 +43,7 @@ const SortableList = (({ gridcolumns, effect, view, items, setItems }) => {
   );
 });
 
-const SortableExplorer = ({ gridcolumns, view, effect, products }) => {
+const SortableExplorer = ({ view, effect, products }) => {
   const [items, setItems] = useState([]);
   useEffect(() => {
     if (products.length > 0) {
@@ -58,7 +54,6 @@ const SortableExplorer = ({ gridcolumns, view, effect, products }) => {
   return (
     <SortableList
       effect={effect}
-      gridcolumns={gridcolumns}
       view={view}
       items={items}
       setItems={setItems}      

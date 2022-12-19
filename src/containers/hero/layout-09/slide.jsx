@@ -77,7 +77,7 @@ const SingleSlide = ({
                                         className="more-author-text"
                                         path={path}
                                     >
-                                        {bitCount}+ Place Bit.
+                                        {bitCount}+ Bit.
                                     </Anchor>
                                 </div>
                             </div>

@@ -98,7 +98,6 @@ const Product = ({
                                     />
                                 </Anchor>
                             )}
-                            <span className="product_temp_number">{index}</span>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
@@ -152,7 +151,7 @@ const Product = ({
                                     className="more-author-text"
                                     path={`/product/${slug}`}
                                 >
-                                    {bitCount}+ Place Bit.
+                                    {bitCount}+ Bit.
                                 </Anchor>
                             </div>
                             {placeBid && (
