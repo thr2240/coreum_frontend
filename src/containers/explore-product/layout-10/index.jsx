@@ -373,7 +373,7 @@ const ExploreProductArea = ({
                                           </li>
                                           <li onClick={() => handleEffect(NFT_EFFECT.WRAP_VIEW)}>
                                             {effect === NFT_EFFECT.WRAP_VIEW && <FiCheck />}
-                                            <span>Wrap View</span>
+                                            <span>Warp View</span>
                                           </li>
                                           <hr className="mt--5 mb--5 mr--10 ml--10" />
                                           <li onClick={handleWalk}>

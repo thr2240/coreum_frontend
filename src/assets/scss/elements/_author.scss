@@ -311,11 +311,13 @@
 .more_options {
     position: relative;
     z-index: 90;
+
     .premium_badge {
         position: absolute;
         top: 0;
         width: 18px;
     }
+
     .more_options_list {
         opacity: 0;
         visibility: hidden;
@@ -336,7 +338,7 @@
             margin: 0;
             padding: 10px;
             text-align: left;
-            
+
             li {
                 margin: 0;
                 padding: 4px 10px;
@@ -344,6 +346,7 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
+
                 svg {
                     position: absolute;
                     top: 0;
@@ -351,6 +354,7 @@
                     bottom: 0;
                     margin: auto 0;
                 }
+
                 span {
                     margin-left: 8px;
                 }
@@ -391,11 +395,13 @@
 .view_options {
     position: relative;
     z-index: 90;
+
     .premium_badge {
         position: absolute;
         top: 0;
         width: 18px;
     }
+
     .view_options_list {
         opacity: 0;
         visibility: hidden;
@@ -455,7 +461,7 @@
 .grid-container {
     --grid-layout-gap: 10px;
     --grid-column-count: 4;
-    --grid-item--min-width: 250px;
+    --grid-item--min-width: 180px;
     --gap-count: calc(var(--grid-column-count) - 1);
     --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
     --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
@@ -515,6 +521,7 @@
 .filter_scrollbar {
     width: 100%;
     height: 100vh !important;
+
     @media only screen and (max-width: 991px) {
         height: 340px !important;
     }
@@ -550,22 +557,24 @@
     background-repeat: no-repeat;
     background-size: cover;
     transition: transform .6s 1s;
-  }
-  
-  .tile-container--active {
+}
+
+.tile-container--active {
     transition: none;
-  }
-  .tile-container p {
+}
+
+.tile-container p {
     color: hsl(0deg 0% 0% / 60%);
     font-size: 2.2rem;
-  }
-  .product-tile-effect:hover .tile-container::before,
-  .product-tile-effect:hover .tile-container::after {
+}
+
+.product-tile-effect:hover .tile-container::before,
+.product-tile-effect:hover .tile-container::after {
     width: calc(100% - 4rem);
     height: calc(100% - 4rem);
-  }
+}
 
-  .tutorial-modal {
+.tutorial-modal {
     inset: 50% auto auto 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -577,60 +586,61 @@
     border-radius: 4px;
     outline: none;
     padding: 20px;
-  }
+}
 
-  html[data-theme="dark"] .tutorial-modal {
+html[data-theme="dark"] .tutorial-modal {
     border: 1px solid #23232a;
     background-color: #0f0f14;
-  }
+}
 
-  .tutorial-page {
+.tutorial-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     gap: 20px;
-  }
+}
 
-  .tutorial-content {
+.tutorial-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
+}
 
-  .btn-end-tutorial {
+.btn-end-tutorial {
     width: 120px;
     color: white;
     padding: 8px;
     font-size: 16px;
     background: var(--color-primary);
     border-radius: 5px;
-  }
+}
 
-  .rn-author-bg-area {
+.rn-author-bg-area {
     position: relative;
     height: 180px;
     margin-bottom: 10px;
-  }
+}
 
-  .author-show-banner {
+.author-show-banner {
     height: 180px;
     transition: height 0.3s ease-in;
-  }
+}
 
-  .author-hide-banner, .thumbnail-hide-banner {
+.author-hide-banner,
+.thumbnail-hide-banner {
     height: 0px;
     transition: height 0.3s ease-in;
-  }
+}
 
-  .thumbnail-show-banner {
+.thumbnail-show-banner {
     height: 144px;
     transition: height 0.3s ease-in;
-  }
+}
 
-  .btn-chevron {
+.btn-chevron {
     position: absolute;
     left: 0;
     right: 0;
@@ -639,17 +649,17 @@
     color: #171721;
     border: none;
     width: 100px;
-  }
+}
 
-  .author-bg-up {
+.author-bg-up {
     bottom: 0;
-  }
+}
 
-  .author-bg-down {
+.author-bg-down {
     bottom: -20px;
     color: white;
-  }
+}
 
-  .view-slider {
+.view-slider {
     cursor: pointer;
-  }
+}

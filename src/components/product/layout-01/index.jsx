@@ -177,7 +177,6 @@ const Product = ({
                                     />
                                 </Anchor>
                             )}
-                            <span className="product_temp_number">{index}</span>
                         </div>
                     </div>
                     <div className="product-share-wrapper">

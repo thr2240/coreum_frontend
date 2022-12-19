@@ -7,14 +7,14 @@
                 "alt": "logo"
             }
         ],
-        "text": "Created with the collaboration of over 60 of the world's best Coreum Artists."
+        "text": "Created with the collaboration of over 60 of the world's best Corehub Artists."
     },
     "newsletter-widget": {
         "title": "Get The Latest Nuron Updates",
         "note": "Email is safe. We don't spam."
     },
     "quicklink-widget": {
-        "title": "Coreum",
+        "title": "Corehub",
         "menu": [
             {
                 "id": 1,
@@ -142,5 +142,5 @@
             }
         ]
     },
-    "copyright_text": "©2022 Coreum, Inc. All rights reserved"
+    "copyright_text": "©2022 Corehub, Inc. All rights reserved"
 }
