@@ -18,10 +18,13 @@ const SortableItem = (({ collection, effect }) => {
         </div >
     );
 });
-const SortableList = (({ gridcolumns, effect, collections, setItems }) => {
+const SortableList = (({ view, effect, collections, setItems }) => {
+    useEffect(() => {
+        document.querySelector('.grid-container').style.setProperty('--grid-column-count', parseInt(view));
+      }, [view])
     return (
         <ReactSortable
-            className={gridcolumns ? `grid-container grid-${gridcolumns}-container` : "grid-container"}
+            className="grid-container"
             list={collections}
             setList={setItems}
             delayOnTouchOnly={true}
@@ -35,7 +38,7 @@ const SortableList = (({ gridcolumns, effect, collections, setItems }) => {
     );
 });
 
-const CollectSortableExplorer = ({ gridcolumns, effect, collections }) => {
+const CollectSortableExplorer = ({ view, effect, collections }) => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -47,7 +50,7 @@ const CollectSortableExplorer = ({ gridcolumns, effect, collections }) => {
     return (
         <SortableList
             effect={effect}
-            gridcolumns={gridcolumns}
+            view={view}
             collections={items}
             setItems={setItems}
         />

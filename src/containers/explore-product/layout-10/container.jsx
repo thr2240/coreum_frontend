@@ -34,7 +34,7 @@ const Container = ({ tap, effect, products }) => {
                 <TabContent className="tab-content rn-bid-content">
                     <TabPane className="row g-5 d-flex w-100 ml--0 mr--0" eventKey="nav-collections">
                         {tap === 0 && (
-                            <CollectionArea collections={collections} />
+                            <CollectionArea collections={collections} view={view} />
                         )}
                     </TabPane>
                     <TabPane className="row d-flex g-5 w-100 ml--0 mr--0" eventKey="nav-auction">
