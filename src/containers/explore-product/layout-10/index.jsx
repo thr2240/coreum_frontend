@@ -333,6 +333,12 @@ const ExploreProductArea = ({
                                     </Nav.Link>
                                     <Nav.Link
                                       as="button"
+                                      eventKey="nav-comingsoon"
+                                    >
+                                      Music Option
+                                    </Nav.Link>
+                                    <Nav.Link
+                                      as="button"
                                       className="more_options"
                                     >
                                       <span>More Options</span>

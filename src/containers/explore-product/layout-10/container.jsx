@@ -19,15 +19,16 @@ const Container = ({ tap, effect, products }) => {
     }
     return (
         <div className="author-container">
-            <div className='mb--10'>
+            <div className='d-flex justify-content-center mb--10'>
                 <Slider
                     aria-label="View"
                     getAriaValueText={valuetext}
                     step={1}
                     defaultValue={4}
-                    min={3}
+                    min={1}
                     max={6}
                     onChange={handleChange}
+                    style={{ width: '400px'}}
                 />
             </div>
             <Scrollbar autoHide style={{ height: "100vh" }}>

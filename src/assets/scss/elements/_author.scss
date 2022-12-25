@@ -467,8 +467,10 @@
     --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    // grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    grid-template-columns: repeat(var(--grid-column-count), 1fr);
     grid-gap: var(--grid-layout-gap);
+    justify-items: center;
 
     // &.grid-2-container {
     //     grid-template-columns: repeat(2, 1fr);
@@ -502,7 +504,7 @@
 .grid-item {
     height: fit-content;
     user-select: none;
-    width: 100%;
+    width: 200px;
     cursor: all-scroll;
 }
 

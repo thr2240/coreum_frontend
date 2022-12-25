@@ -160,7 +160,6 @@ const Product = ({
                                 </Button>
                             )}
                         </div>
-
                     </div>
                 </CardFlip>
             ) : (
