@@ -14,16 +14,17 @@ const ProductArea = ({ space, className, data }) => (
         )}
     >
         <div className="container">
-            <div className="row mb--50 align-items-center">
-                {data?.section_title && (
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+            <div className="row mt--30 mb--20 align-items-center">
+                <div className="col-lg-12 text-center">
+                    {data?.section_title && (
                         <SectionTitle
                             {...data.section_title}
                             className="mb-0"
                         />
-                    </div>
-                )}
-
+                    )}
+                </div>
+                {/* <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div
                         className="view-more-btn text-start text-sm-end"
@@ -36,7 +37,7 @@ const ProductArea = ({ space, className, data }) => (
                             <i className="feather feather-arrow-right" />
                         </Anchor>
                     </div>
-                </div>
+                </div> */}
             </div>
             {data?.products && (
                 <div className="row g-5">

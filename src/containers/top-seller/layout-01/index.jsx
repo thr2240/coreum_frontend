@@ -60,7 +60,7 @@ const TopSellerArea = ({ className, space, id, data }) => {
                     {sellers.map((seller) => (
                         <div
                             key={seller.id}
-                            className="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list"
+                            className="col-9 col-lg-6 col-md-6 col-sm-6 top-seller-list"
                         >
                             <TopSeller
                                 name={seller.name}

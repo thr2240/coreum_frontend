@@ -128,6 +128,16 @@
         font-size: 22px;
     }
 
+    .explore_collection {
+        background: var(--color-primary);
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        border: none;
+        border-radius: 0.75rem;
+        padding: 10px 20px;
+    }
+
     .slider-thumbnail {
         @media #{$sm-layout} {
             display: flex;
@@ -137,6 +147,7 @@
         img {
             height: auto;
             width: 100%;
+            border-radius: 15px;
         }
     }
 

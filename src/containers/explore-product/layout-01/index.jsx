@@ -100,8 +100,8 @@ const ExploreProductArea = ({ className, space, data }) => {
             )}
         >
             <div className="container">
-                <div className="row mb--50 align-items-center">
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div className="row mt--30 mb--20 align-items-center">
+                    <div className="col-lg-12 text-center">
                         {data?.section_title && (
                             <SectionTitle
                                 className="mb--0"
@@ -109,12 +109,14 @@ const ExploreProductArea = ({ className, space, data }) => {
                             />
                         )}
                     </div>
+                    {/* <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                    </div>
                     <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                         <FilterButton
                             open={state.filterToggle}
                             onClick={filterHandler}
                         />
-                    </div>
+                    </div> */}
                 </div>
 
                 <ProductFilter

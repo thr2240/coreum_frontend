@@ -2,13 +2,14 @@ import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-01";
 import Footer from "@layout/footer/footer-01";
-import HeroArea from "@containers/hero/layout-01";
+import HeroArea from "@containers/hero";
 import LiveExploreArea from "@containers/live-explore/layout-01";
+import ExCarousel from "@containers/3d-carousel";
 import ServiceArea from "@containers/services/layout-01";
 import NewestItmesArea from "@containers/product/layout-04";
 import TopSellerArea from "@containers/top-seller/layout-01";
 import ExploreProductArea from "@containers/explore-product/layout-01";
-import CollectionArea from "@containers/collection/layout-01";
+import CollectionArea from "@containers/collection/layout-02";
 import { normalizedData } from "@utils/methods";
 
 // Demo Data
@@ -41,35 +42,43 @@ const Home = () => {
             <Header />
             <main id="main-content">
                 <HeroArea data={content["hero-section"]} />
-                <LiveExploreArea
+                <div className="container mt--50">
+                    <div className="row d-flex align-items-center">
+                        <div className="col-md-8">
+                            <ExCarousel
+                                data={{
+                                    ...content["live-explore-section"],
+                                    products: productData,
+                                }}
+                            />
+                        </div>
+                        <div className="col-md-4">
+                            <TopSellerArea
+                                data={{
+                                    ...content["top-sller-section"],
+                                    sellers: sellerData,
+                                }}
+                            />
+                        </div>
+                    </div>
+                </div>
+                {/* <ServiceArea data={content["service-section"]} /> */}
+                <CollectionArea
                     data={{
-                        ...content["live-explore-section"],
-                        products: liveAuctionData,
+                        ...content["collection-section"],
+                        collections: collectionsData.slice(0, 4),
                     }}
                 />
-                <ServiceArea data={content["service-section"]} />
                 <NewestItmesArea
                     data={{
                         ...content["newest-section"],
                         products: newestData,
                     }}
                 />
-                <TopSellerArea
-                    data={{
-                        ...content["top-sller-section"],
-                        sellers: sellerData,
-                    }}
-                />
                 <ExploreProductArea
                     data={{
                         ...content["explore-product-section"],
                         products: productData,
-                    }}
-                />
-                <CollectionArea
-                    data={{
-                        ...content["collection-section"],
-                        collections: collectionsData.slice(0, 4),
                     }}
                 />
             </main>
