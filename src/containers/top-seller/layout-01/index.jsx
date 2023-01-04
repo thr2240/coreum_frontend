@@ -37,8 +37,8 @@ const TopSellerArea = ({ className, space, id, data }) => {
             )}
             id={id}
         >
-            <div className="container">
-                <div className="row  mb--30">
+            <div className="container pl--30">
+                <div className="row  mb--10">
                     <div className="col-12 justify-sm-center d-flex">
                         {data?.section_title && (
                             <SectionTitle {...data.section_title} />
@@ -56,7 +56,7 @@ const TopSellerArea = ({ className, space, id, data }) => {
                         />
                     </div>
                 </div>
-                <div className="row justify-sm-center g-5 top-seller-list-wrapper">
+                <div className="row justify-sm-center g-3 top-seller-list-wrapper">
                     {sellers.map((seller) => (
                         <div
                             key={seller.id}

@@ -44,7 +44,7 @@ const Home = () => {
                 <HeroArea data={content["hero-section"]} />
                 <div className="container mt--50">
                     <div className="row d-flex align-items-center">
-                        <div className="col-md-8">
+                        <div className="col-lg-8 col-md-12">
                             <ExCarousel
                                 data={{
                                     ...content["live-explore-section"],
@@ -52,7 +52,7 @@ const Home = () => {
                                 }}
                             />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-lg-4 col-md-12">
                             <TopSellerArea
                                 data={{
                                     ...content["top-sller-section"],

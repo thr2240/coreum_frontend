@@ -132,7 +132,7 @@ const ExploreProductArea = ({ className, space, data }) => {
                             {state.products.slice(0, 10).map((prod) => (
                                 <div
                                     key={prod.id}
-                                    className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                                    className="col-5 col-lg-3 col-md-4 col-sm-6 col-12"
                                 >
                                     <Product
                                         overlay

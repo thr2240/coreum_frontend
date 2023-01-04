@@ -47,7 +47,7 @@ const ProductArea = ({ space, className, data }) => (
                             data-sal="slide-up"
                             data-sal-delay="150"
                             data-sal-duration="800"
-                            className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                            className="col-5 col-lg-3 col-md-4 col-sm-6 col-12"
                         >
                             <Product
                                 title={prod.title}
