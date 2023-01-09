@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { SSRProvider } from "react-bootstrap";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
+import { AuthContextProvider } from "@context/authContext";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/feather.css";
 import "../assets/css/modal-video.css";
@@ -27,7 +28,9 @@ const MyApp = ({ Component, pageProps }) => {
         <SSRProvider>
             {getLayout(
                 <ThemeProvider defaultTheme="dark">
-                    <Component {...pageProps} />
+                    <AuthContextProvider>
+                        <Component {...pageProps} />
+                    </AuthContextProvider>
                 </ThemeProvider>
             )}
         </SSRProvider>

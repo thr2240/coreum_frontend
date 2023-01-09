@@ -10,6 +10,7 @@ import Settings from "@components/settings";
 import BurgerButton from "@ui/burger-button";
 import Anchor from "@ui/anchor";
 import Button from "@ui/button";
+import { AiOutlineMessage } from "react-icons/ai";
 import { useOffcanvas, useSticky, useFlyoutSearch } from "@hooks";
 import headerData from "../../../data/general/header-01.json";
 import menuData from "../../../data/general/menu-01.json";
@@ -91,6 +92,13 @@ const Header = ({ className }) => {
                             <div className="setting-option mobile-menu-bar d-block d-xl-none">
                                 <div className="hamberger">
                                     <BurgerButton onClick={offcanvasHandler} />
+                                </div>
+                            </div>
+                            <div className="setting-option rn-icon-list">
+                                <div className="icon-box">
+                                    <Anchor path={headerData.message_link}>
+                                        <AiOutlineMessage size={20} />
+                                    </Anchor>
                                 </div>
                             </div>
                             <div className="setting-option rn-icon-list user-account">

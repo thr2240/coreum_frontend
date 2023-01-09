@@ -430,6 +430,7 @@
         }
 
         .connectBtn {
+            white-space: nowrap;
             @media #{$laptop-device} {
                 padding: 8px 11px;
                 font-size: 14px;

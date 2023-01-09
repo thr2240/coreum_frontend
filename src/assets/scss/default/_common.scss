@@ -1,5 +1,10 @@
 body {
     scroll-behavior: auto;
+    min-height: 100vh;
+}
+
+#main-content {
+    min-height: calc(100vh - 160px);
 }
 
 // header sticky

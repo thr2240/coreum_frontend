@@ -237,7 +237,6 @@ const ExploreProductArea = ({
     <div
       className={clsx(
         "explore-area",
-        space === 1 && "rn-section-gapTop",
         className
       )}
       id="explore-id"

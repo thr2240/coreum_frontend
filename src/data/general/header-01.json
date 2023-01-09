@@ -8,5 +8,6 @@
             "src": "/images/logo/logo-dark.png"
         }
     ],
-    "activity_link": "/activity"
+    "activity_link": "/activity",
+    "message_link": "/message"
 }
