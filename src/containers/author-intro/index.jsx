@@ -7,10 +7,14 @@ import ShareDropdown from "@components/share-dropdown";
 import ShareModal from "@components/modals/share-modal";
 import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 import Anchor from "@ui/anchor";
+import { useAuth } from "@context/authContext";
+import { config } from "@utils/config";
 
 const AuthorIntroArea = ({ className, space, data }) => {
     const [isShareModalOpen, setIsShareModalOpen] = useState(false);
     const [isBanner, setIsBanner] = useState(true);
+    const { user } = useAuth();
+    const API_URL = config.API_URL;
     const shareModalHandler = () => setIsShareModalOpen((prev) => !prev);
     const handleBanner = (e) => {
         setIsBanner(false);
@@ -21,7 +25,7 @@ const AuthorIntroArea = ({ className, space, data }) => {
                 show={isShareModalOpen}
                 handleModal={shareModalHandler}
             />
-            <div 
+            <div
                 className={clsx("rn-author-bg-area", isBanner ? "author-show-banner" : "author-hide-banner")}
                 onMouseLeave={handleBanner}
             >
@@ -38,7 +42,8 @@ const AuthorIntroArea = ({ className, space, data }) => {
                 }
                 <div className={clsx("author-bg-area")}>
                     <Image
-                        src="/images/banner/banner.png"
+                        loader={() => user?.cover ? API_URL + "photo/" + user?.cover : "/images/profile/cover-01.jpg"}
+                        src={user?.cover ? API_URL + "photo/" + user?.cover : "/images/profile/cover-01.jpg"}
                         alt="Slider BG"
                         layout="fill"
                         objectFit="cover"
@@ -49,12 +54,8 @@ const AuthorIntroArea = ({ className, space, data }) => {
                 <div className="container">
                     <div className={clsx("user-thumbnail", isBanner ? "thumbnail-show-banner" : "thumbnail-hide-banner")}>
                         <Image
-                            // src={
-                            //     data?.image?.src
-                            //         ? data.image.src
-                            //         : "/images/profile/profile-01.png"
-                            // }
-                            src="/images/profile/avatar.jpg"
+                            loader={() => user?.photo ? API_URL + "photo/" + user?.photo : "/images/profile/profile-01.png"}
+                            src={user?.photo ? API_URL + "photo/" + user?.photo : "/images/profile/profile-01.png"}
                             alt={data.image?.alt || data.name}
                             width="100%"
                             height="100%"

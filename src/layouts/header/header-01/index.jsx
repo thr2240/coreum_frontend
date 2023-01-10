@@ -1,5 +1,8 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import axios from "axios";
+import { useRouter } from "next/router";
 import Logo from "@components/logo";
 import MainMenu from "@components/menu/main-menu";
 import MobileMenu from "@components/menu/mobile-menu";
@@ -14,15 +17,60 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { useOffcanvas, useSticky, useFlyoutSearch } from "@hooks";
 import headerData from "../../../data/general/header-01.json";
 import menuData from "../../../data/general/menu-01.json";
+import { useSigningClient } from "@context/cosmwasm";
+import { useAuth } from "@context/authContext";
+import { config } from "@utils/config";
 
 const Header = ({ className }) => {
     const sticky = useSticky();
     const { offcanvas, offcanvasHandler } = useOffcanvas();
     const { search, searchHandler } = useFlyoutSearch();
-    const authenticate = () => {
-        console.log("authenticate");
+    const { user, dispatch } = useAuth()
+    const { loadClient, connectWallet, disconnect, walletAddress } = useSigningClient();
+    const router = useRouter();
+    const API_URL = config.API_URL;
+
+    useEffect(() => {
+        loadWeb3();
+    }, []);
+
+    useEffect(() => {
+        if (walletAddress) {
+            login(walletAddress, dispatch);
+        }
+    }, [walletAddress]);
+
+    const loadWeb3 = async () => {
+        await loadClient();
+
+        let account = localStorage.getItem('address');
+        if (account != null) {
+            await connectWallet();
+        }
     }
-    const isAuthenticated = false;
+
+    const authenticate = async () => {
+        await connectWallet();
+    }
+
+    const unauthenticate = async () => {
+        await disconnect();
+        dispatch({ type: "LOGIN_OUT" });
+        router.push({
+            pathname: "/",
+        });
+    }
+
+    const login = async (wallet, dispatch) => {
+        dispatch({ type: "LOGIN_START" });
+        try {
+            const res = await axios.get(API_URL + "api/users/" + wallet);
+            dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+        }
+        catch (err) {
+            dispatch({ type: "LOGIN_FAILURE", payload: err })
+        }
+    }
 
     return (
         <>
@@ -62,9 +110,19 @@ const Header = ({ className }) => {
                                 </div>
                                 <FlyoutSearchForm isOpen={search} />
                             </div>
-                            {!isAuthenticated && (
-                                <div className="setting-option header-btn">
-                                    <div className="icon-box">
+
+                            <div className="setting-option header-btn">
+                                <div className="icon-box">
+                                    {walletAddress ? (
+                                        <Button
+                                            color="primary-alta"
+                                            className="connectBtn"
+                                            size="small"
+                                            onClick={() => unauthenticate()}
+                                        >
+                                            Disconnect
+                                        </Button>
+                                    ) : (
                                         <Button
                                             color="primary-alta"
                                             className="connectBtn"
@@ -73,14 +131,14 @@ const Header = ({ className }) => {
                                         >
                                             Wallet connect
                                         </Button>
-                                    </div>
+                                    )}
+                                </div>
+                            </div>
+                            {walletAddress && (
+                                <div className="setting-option rn-icon-list user-account">
+                                    <UserDropdown />
                                 </div>
                             )}
-                            {/* {isAuthenticated && ( */}
-                            <div className="setting-option rn-icon-list user-account">
-                                <UserDropdown />
-                            </div>
-                            {/* )} */}
                             <div className="setting-option rn-icon-list notification-badge">
                                 <div className="icon-box">
                                     <Anchor path={headerData.activity_link}>
@@ -89,16 +147,20 @@ const Header = ({ className }) => {
                                     </Anchor>
                                 </div>
                             </div>
+                            {
+                                user && (
+                                    <div className="setting-option rn-icon-list">
+                                        <div className="icon-box">
+                                            <Anchor path={headerData.message_link}>
+                                                <AiOutlineMessage size={20} />
+                                            </Anchor>
+                                        </div>
+                                    </div>
+                                )
+                            }
                             <div className="setting-option mobile-menu-bar d-block d-xl-none">
                                 <div className="hamberger">
                                     <BurgerButton onClick={offcanvasHandler} />
-                                </div>
-                            </div>
-                            <div className="setting-option rn-icon-list">
-                                <div className="icon-box">
-                                    <Anchor path={headerData.message_link}>
-                                        <AiOutlineMessage size={20} />
-                                    </Anchor>
                                 </div>
                             </div>
                             <div className="setting-option rn-icon-list user-account">

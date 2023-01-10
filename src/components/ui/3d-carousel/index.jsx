@@ -61,7 +61,6 @@ export default class Carousel extends React.Component {
     }
 
     render() {
-        console.log('>>>', this.state.active)
         return (
             <div id="carousel" className="noselect">
                 <div className="arrow arrow-left" onClick={this.leftClick}>

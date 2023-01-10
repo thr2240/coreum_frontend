@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Wrapper from "@layout/wrapper";
 import SEO from "@components/seo";
 import Header from "@layout/header/header-01";
@@ -9,7 +9,7 @@ import AddFriend from "@components/message/addFriend";
 import ProfilePage from "@components/message/profile";
 import SidebarChat from "@components/message/sidebarChat";
 import EmptyChatRoom from "@components/message/emptyChatRoom";
-import { AuthContext } from "@context/authContext";
+import { useAuth } from "@context/authContext";
 
 import { io } from "socket.io-client";
 // import "emoji-mart/css/emoji-mart.css";
@@ -27,7 +27,7 @@ export async function getStaticProps() {
   return { props: { className: "template-color-1" } };
 }
 
-function Home() {
+function MessageBox() {
   const [chatroomtiles, setChatroomtiles] = useState([]);
   const [currentchat, setCurrentchat] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -35,7 +35,7 @@ function Home() {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [amigo, setAmigo] = useState();
   const [open, setOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const scrollRef = useRef();
   const socket = useRef();
 
@@ -65,27 +65,26 @@ function Home() {
   }, [user, chatroomtiles, currentchat, socket]);
 
   /* Fetching the Chat Tiles */
-
+  const getChatroomtiles = async () => {
+    try {
+      const res = await axios.get(API_URL + "api/chatrooms/" + user?._id);
+      setChatroomtiles(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
-    const getChatroomtiles = async () => {
-      try {
-        const res = await axios.get(API_URL + "api/chatrooms/" + user._id);
-        setChatroomtiles(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
     getChatroomtiles();
   }, [user?._id, API_URL]);
 
   /* Fetching the Chat Tile user details */
 
   useEffect(() => {
-    const amigoId = currentchat?.members.find((m) => m !== user._id);
+    const amigoId = currentchat?.members.find((m) => m !== user?._id);
     const getAmigodetails = async () => {
       try {
         if (amigoId) {
-          const response = await axios.get(API_URL + "api/users/" + amigoId);
+          const response = await axios.get(API_URL + "api/users/id/" + amigoId);
           setAmigo(response.data);
         }
       } catch (err) { }
@@ -108,7 +107,6 @@ function Home() {
   }, [currentchat, API_URL]);
 
   /* Scroll to the recent message */
-
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -154,27 +152,16 @@ function Home() {
     setPick(false)
   };
 
-  /* Logout */
-
-  const logout = () => {
-    localStorage.removeItem("user");
-    window.location.reload();
-  };
-
   /* AddChat Toggle Setup */
-
   const [addtoggle, setAddtoggle] = useState(false);
   const addchatToggler = () => {
     addtoggle === false ? setAddtoggle(true) : setAddtoggle(false);
-    console.log(addtoggle);
   };
 
-  /* Profile Page Toggle Setup */
-
-  const [profiletoggle, setProfiletoggle] = useState(false);
-  const profiletoggler = () => {
-    profiletoggle === false ? setProfiletoggle(true) : setProfiletoggle(false);
-  };
+  const handleRefresh = () => {
+    getChatroomtiles();
+    setAddtoggle(false);
+  }
 
   return (
     <Wrapper>
@@ -183,10 +170,7 @@ function Home() {
       <main id="main-content">
         <div className="home">
           {/* Chat Adding Card */}
-          <AddFriend addchattoggler={() => { addchatToggler(); }} addchattoggle={addtoggle} />
-
-          {/* Profile Page Card - Update */}
-          <ProfilePage toggler={() => { profiletoggler(); }} togglestate={profiletoggle} />
+          <AddFriend handleRefresh={handleRefresh} addchattoggler={() => { addchatToggler(); }} addchattoggle={addtoggle} />
 
           {/* Sidebar Open Menu */}
           {open
@@ -197,34 +181,17 @@ function Home() {
               </IconButton>
             </div>
           }
-
           {/* Add Chat Icon */}
           <div className="add-chatroom-icon" onClick={addchatToggler}>
             <IconButton>
-              <IoMdPersonAdd size={20} />
+              <IoMdPersonAdd size={30} />
             </IconButton>
           </div>
 
           {/* Sidebar, ChatRoom */}
           <div className="home-components">
-
             {/* Sidebar */}
             <div className={open ? "sidebar active" : "sidebar"}>
-              <div className="sidebar-header">
-                <div className="menu-close" onClick={() => { setOpen(false); }} >
-                  <IconButton>
-                    <AiOutlineClose style={{ fontSize: 35, color: "white" }} />
-                  </IconButton>
-                </div>
-                <IconButton onClick={() => { profiletoggler(); }} >
-                  <img className="user-profile-image" src={user?.photo ? API_URL + "photo/" + user?.photo : "/images/profile/noavatar.jpg"} alt='' />
-                </IconButton>
-                <div className="logout-option">
-                  <IconButton onClick={logout}>
-                    <FaSignOutAlt size={20} />
-                  </IconButton>
-                </div>
-              </div>
               <div className="sidebar-search">
                 <div className="sidebar-search-container">
                   <IoMdSearch className="sidebar-searchicon" size={30} />
@@ -255,15 +222,16 @@ function Home() {
 
                       <div className="chatroom-chatinfo-right">
                         <div className="chatroom-chatinfo-name">
-                          <p>{amigo?.username}</p>
+                          <p>{amigo?.firstname + " " + amigo?.lastname}</p>
                         </div>
                       </div>
                     </div>
+
                   </div>
                   <div className="chatroom-messages-container" onClick={() => { setPick(false) }}>
                     {messages.map((message) => (
                       <div key={message?._id} ref={scrollRef}>
-                        <Message message={message} own={message?.senderId === user._id} />
+                        <Message message={message} own={message?.senderId === user?._id} />
                       </div>
                     ))}
                   </div>
@@ -275,9 +243,9 @@ function Home() {
                       <IconButton onClick={openPicker}>
                         <MdInsertEmoticon size={25} />
                       </IconButton>
-                      <IconButton>
+                      {/* <IconButton>
                         <IoMdAttach size={25} />
-                      </IconButton>
+                      </IconButton> */}
                     </div>
                     <form>
                       <input className="message-input" type="text" name="message-input" placeholder="Type a message" onChange={(e) => { setNewMessage(e.target.value); }} value={newMessage} required />
@@ -302,4 +270,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default MessageBox;

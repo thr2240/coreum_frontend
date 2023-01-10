@@ -37,7 +37,7 @@ const TopSellerArea = ({ className, space, id, data }) => {
             )}
             id={id}
         >
-            <div className="container pl--30">
+            <div className="container pl--40">
                 <div className="row  mb--10">
                     <div className="col-12 justify-sm-center d-flex">
                         {data?.section_title && (

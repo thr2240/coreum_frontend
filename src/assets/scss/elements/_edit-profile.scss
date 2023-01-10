@@ -203,6 +203,10 @@
                 &:focus {
                     border: 2px solid var(--color-primary);
                 }
+
+                &::placeholder {
+                    color: gray;
+                }
             }
         }
 
@@ -256,6 +260,10 @@
                 padding: 10px 20px;
                 border: 2px solid var(--color-border);
                 transition: var(--transition);
+                
+                &::placeholder {
+                    color: gray;
+                }
             }
         }
     }

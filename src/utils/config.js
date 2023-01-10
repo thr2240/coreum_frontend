@@ -1,8 +1,8 @@
 const testnet = true;
 export const config = {
     API_URL: "http://192.168.103.57:5000/",
-    RPC_URL: testnet ? 'https://s-0.devnet-1.coreum.dev' : '',
-    REST_URL: testnet ? 'https://s-0.devnet-1.coreum.dev/rest' : '',
+    RPC_URL: testnet ? 'https://s-0.devnet-1.coreum.dev/' : '',
+    REST_URL: testnet ? 'https://s-0.devnet-1.coreum.dev/rest/' : '',
     DATA_LAYER: testnet ? '' : '',
     FAUCET_URL: '',
     CHAIN_ID: testnet ? 'coreum-devnet-1' : '',

@@ -21,8 +21,8 @@ const TopSeller = ({
                         <Image
                             src={image.src}
                             alt={image?.alt || name}
-                            width={image?.width || 54}
-                            height={image?.height || 54}
+                            width={image?.width || 35}
+                            height={image?.height || 35}
                             layout="fixed"
                         />
                     </Anchor>

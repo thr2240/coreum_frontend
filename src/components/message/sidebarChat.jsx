@@ -22,7 +22,7 @@ function SidebarChat({ chatroomtile, currentUser }) {
         })
         const getAmigodetails = async () => {
             try {
-                const response = await axios.get(API_URL + 'api/users/' + amigoId)
+                const response = await axios.get(API_URL + 'api/users/id/' + amigoId)
                 setUser(response.data)
             }
             catch (err) {
@@ -36,7 +36,7 @@ function SidebarChat({ chatroomtile, currentUser }) {
         <div className='sidebarchat'>
             <img className='amigo-profilepic' src={user?.photo ? API_URL + "photo/" + user?.photo : "/images/profile/noavatar.jpg"} alt='' />
             <div className={online ? "online" : "offile"}></div>
-            <p className="sidebarchat-info-name">{user != null ? user.username : ""}</p>
+            <p className="sidebarchat-info-name">{user != null ? user.firstname + " " + user.lastname : ""}</p>
         </div>
     )
 }
