@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import Wrapper from "@layout/wrapper";
 import SEO from "@components/seo";
 import Header from "@layout/header/header-01";
@@ -22,6 +23,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaSignOutAlt } from "react-icons/fa";
 import { IoMdPersonAdd, IoMdAttach, IoMdSearch, IoMdSend } from "react-icons/io";
 import { MdInsertEmoticon } from "react-icons/md";
+import { toast } from "react-toastify";
 
 export async function getStaticProps() {
   return { props: { className: "template-color-1" } };
@@ -38,6 +40,7 @@ function MessageBox() {
   const { user } = useAuth();
   const scrollRef = useRef();
   const socket = useRef();
+  const router = useRouter();
 
   const API_URL = config.API_URL
 
@@ -108,7 +111,7 @@ function MessageBox() {
 
   /* Scroll to the recent message */
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    scrollRef.current?.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'start' });
   }, [messages]);
 
   /* Emoji Picker */
@@ -155,6 +158,12 @@ function MessageBox() {
   /* AddChat Toggle Setup */
   const [addtoggle, setAddtoggle] = useState(false);
   const addchatToggler = () => {
+    if (!user) {
+      toast.warn("You have to register the profile.", {
+        onClose: () => router.push('/edit-profile')
+      })
+      return;
+    }
     addtoggle === false ? setAddtoggle(true) : setAddtoggle(false);
   };
 

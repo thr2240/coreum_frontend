@@ -6,7 +6,17 @@ const Wrapper = ({ children }) => (
     <>
         {children}
         <ScrollToTop />
-        <ToastContainer />
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover={false}
+        />
     </>
 );
 

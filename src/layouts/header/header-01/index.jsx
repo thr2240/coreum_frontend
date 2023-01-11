@@ -44,7 +44,8 @@ const Header = ({ className }) => {
         await loadClient();
 
         let account = localStorage.getItem('address');
-        if (account != null) {
+        if (account) {
+            console.log('Address >>> ', account)
             await connectWallet();
         }
     }
@@ -147,17 +148,13 @@ const Header = ({ className }) => {
                                     </Anchor>
                                 </div>
                             </div>
-                            {
-                                user && (
-                                    <div className="setting-option rn-icon-list">
-                                        <div className="icon-box">
-                                            <Anchor path={headerData.message_link}>
-                                                <AiOutlineMessage size={20} />
-                                            </Anchor>
-                                        </div>
-                                    </div>
-                                )
-                            }
+                            <div className="setting-option rn-icon-list">
+                                <div className="icon-box">
+                                    <Anchor path={headerData.message_link}>
+                                        <AiOutlineMessage size={20} />
+                                    </Anchor>
+                                </div>
+                            </div>
                             <div className="setting-option mobile-menu-bar d-block d-xl-none">
                                 <div className="hamberger">
                                     <BurgerButton onClick={offcanvasHandler} />

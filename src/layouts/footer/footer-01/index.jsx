@@ -80,7 +80,7 @@ const Footer = ({ space, className, data }) => (
                 </div>
             </div>
         </div> */}
-        <div className="copy-right-one ptb--20 bg-color--1 mt--20">
+        <div className="copy-right-one ptb--10 bg-color--1 mt--20">
             <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-12 col-sm-12">

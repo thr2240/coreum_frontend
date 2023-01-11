@@ -42,7 +42,7 @@ const EditProfileImage = ({ setImage }) => {
       <div className="profile-change row g-5">
         <div className="profile-left col-lg-4">
           <div className="profile-image mb--30">
-            <h6 className="title">Change Your Profile Picture</h6>
+            <h6 className="title">Profile Picture</h6>
             <div className="img-wrap">
               {
                 user?.photo ? (
@@ -89,7 +89,7 @@ const EditProfileImage = ({ setImage }) => {
 
         <div className="profile-left right col-lg-8">
           <div className="profile-image mb--30">
-            <h6 className="title">Change Your Cover Photo</h6>
+            <h6 className="title">Cover Picture</h6>
             <div className="img-wrap">
               {
                 user?.cover ? (

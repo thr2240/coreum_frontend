@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { SSRProvider } from "react-bootstrap";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
-import { ToastContainer } from 'react-toastify';
 import { AuthContextProvider } from "@context/authContext";
 import { SigningCosmWasmProvider } from "@context/cosmwasm";
 import "../assets/css/bootstrap.min.css";
@@ -38,17 +37,6 @@ const MyApp = ({ Component, pageProps }) => {
                     </AuthContextProvider>
                 </ThemeProvider>
             )}
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={true}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss={false}
-                draggable
-                pauseOnHover={false}
-            />
         </SSRProvider>
     );
 };

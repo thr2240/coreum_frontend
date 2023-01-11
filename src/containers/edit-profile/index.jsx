@@ -29,7 +29,7 @@ const EditProfile = () => {
     email: '',
     bio: ''
   })
-  const { user } = useAuth();
+  const { user, dispatch } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -77,6 +77,14 @@ const EditProfile = () => {
         toast.warn(resp.data.res);
       } else {
         toast.success(resp.data.res);
+        dispatch({ type: "LOGIN_START" });
+        try {
+            const res = await axios.get(API_URL + "api/users/" + walletAddress);
+            dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+        }
+        catch (err) {
+            dispatch({ type: "LOGIN_FAILURE", payload: err })
+        }
       }
     } catch (err) {
       console.log(err);
